@@ -1,0 +1,40 @@
+/*
+ * Case Study Showcase Master Stylesheet
+ * Modularized for fast maintainability, clean revisions, and zero CSS bloat.
+ */
+
+/* 1. Base tokens, body padding override & embedded header */
+@import url('./case_study/base.css');
+
+/* 2. Hero banner showcase & metrics stripe */
+@import url('./case_study/hero.css');
+
+/* 3. The Problem section */
+@import url('./case_study/problem.css');
+
+/* 4. The Vision & Pillars */
+@import url('./case_study/vision.css');
+
+/* 5. Structure & Information Architecture */
+@import url('./case_study/structure.css');
+
+/* 6. Wireframes showcase */
+@import url('./case_study/wireframes.css');
+
+/* 7. Visual Design Transformation */
+@import url('./case_study/visual.css');
+
+/* 8. Engineering Architecture */
+@import url('./case_study/engineering.css');
+
+/* 9. Performance Challenges */
+@import url('./case_study/challenges.css');
+
+/* 10. Offline-First Feature */
+@import url('./case_study/offline.css');
+
+/* 11. Complete Screen Gallery */
+@import url('./case_study/gallery.css');
+
+/* 12. Bottom Call-To-Action */
+@import url('./case_study/cta.css');

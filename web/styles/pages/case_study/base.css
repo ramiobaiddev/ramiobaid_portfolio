@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Case Study Base & Tokens
+   ========================================================================== */
+
+/* Eliminate global page padding when viewing the Case Study page */
+body:has(.case-study-page) {
+  padding: 0 !important;
+  background: var(--cs-hero-bg);
+}
+
+.case-study-page {
+  /* Default fallbacks if not provided */
+  --cs-primary: #0052ff;
+  --cs-accent: #ffaa01;
+  --cs-hero-bg: linear-gradient(115deg, #001C66 0%, #0036B8 35%, #004DE6 65%, #00227A 100%);
+  --cs-problem-bg: #ffaa01;
+
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  background-color: var(--color-surface-page-overlayed);
+}
+
+/* Embedded Header in Hero Banner */
+.case-study-page .site-header {
+  margin: 0 auto;
+  padding: 24px 5% 16px 5%;
+  width: 100%;
+  background: transparent;
+}
+
+.case-study-page .site-header .main-nav a {
+  color: #ffffff;
+  font-size: 1.125rem;
+  font-weight: 600;
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+.case-study-page .site-header .main-nav a:hover {
+  color: var(--cs-accent, #ffaa01);
+}
+
+/* Common container constraints */
+.cs-container {
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+/* Footer layout inside case study page */
+.case-study-page .site-footer {
+  width: 100%;
+  margin: 0;
+  left: auto;
+  right: auto;
+}

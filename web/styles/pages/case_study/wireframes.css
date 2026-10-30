@@ -1,0 +1,59 @@
+/* ==========================================================================
+   5. WIREFRAMES SECTION
+   ========================================================================== */
+.cs-wireframes {
+  width: 100%;
+  padding: clamp(64px, 8vw, 120px) 0;
+  background: var(--alias-primary-50);
+}
+
+.cs-wireframes__inner {
+
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+.cs-wireframes__heading {
+  margin-top: var(--alias-spacing-3xl);
+  margin-bottom: var(--alias-spacing-2xl);
+
+  color: var(--color-text-heading);
+}
+
+.cs-wireframes__desc {
+  max-width: 1200px;
+  color: var(--color-text-body);
+  line-height: 1.65;
+  margin: 0 0 clamp(32px, 5vw, 56px) 0;
+}
+
+.cs-wireframes__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 20px;
+}
+
+.cs-wireframe-item {
+
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: clamp(380px, 32vw, 460px);
+  /* All wireframes share this exact height */
+  transition: transform 0.2s ease;
+}
+
+.cs-wireframe-item:hover {
+  transform: translateY(-4px);
+}
+
+.cs-wireframe-img {
+  width: auto;
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: top center;
+  display: block;
+}

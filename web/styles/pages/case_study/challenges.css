@@ -1,0 +1,97 @@
+/* ==========================================================================
+   8. PERFORMANCE CHALLENGES SOLVED
+   ========================================================================== */
+.cs-challenges {
+  width: 100%;
+  background: var(--cs-problem-bg);
+  padding: clamp(64px, 8vw, 120px) 5%;
+}
+
+.cs-challenges__inner {
+
+  margin: 0 auto;
+}
+
+.cs-challenges__eyebrow {
+  font-size: 0.875rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #000000;
+  opacity: 0.8;
+  margin: 0 0 12px 0;
+}
+
+.cs-challenges__heading {
+  color: #000000;
+  letter-spacing: normal;
+  margin: 0 0 16px 0;
+  line-height: 1.1;
+  margin-top: var(--alias-spacing-3xl);
+  margin-bottom: var(--alias-spacing-2xl);
+}
+
+.cs-challenges__desc {
+  color: #111111;
+  line-height: 1.65;
+  margin-bottom: var(--alias-spacing-5xl);
+}
+
+.cs-challenges__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.cs-challenge-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 28px 24px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.cs-challenge-card__bar {
+  width: 36px;
+  height: 4px;
+  background: var(--cs-primary);
+  border-radius: 2px;
+  margin-bottom: 18px;
+}
+
+.cs-challenge-metric {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: #080808;
+  margin: 0 0 6px 0;
+  line-height: 1;
+}
+
+.cs-challenge-label {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #222222;
+  margin: 0 0 10px 0;
+}
+
+.cs-challenge-desc {
+  font-size: 0.9rem;
+  color: #555555;
+  line-height: 1.55;
+  margin: 0;
+}
+
+@media (max-width: 820px) {
+  .cs-challenges__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cs-challenges__grid {
+    grid-template-columns: 1fr;
+  }
+}

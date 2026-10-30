@@ -1,0 +1,136 @@
+/*
+ * Component CSS consumes semantic/component tokens, not raw palette values.
+ * This is only the reusable button foundation; portfolio sections are omitted.
+ * Hover, active, and focus-visible map to Figma Hover, Pressed, and Foucsed
+ * variants respectively. Focus state mapping is an implementation convention.
+ */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--button-content-gap);
+  padding: var(--button-padding-block) var(--button-padding-inline);
+  border: var(--button-border-width) solid var(--color-border-primary);
+  border-radius: var(--button-radius);
+  box-shadow: var(--shadow-elevation-4);
+  font-family: var(--font-family-body);
+  font-size: var(--type-body-md-size);
+  font-weight: var(--font-weight-semi-bold);
+  line-height: var(--type-body-md-line-height);
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+}
+
+.button span {
+  display: inline-flex;
+  align-items: center;
+}
+
+button img {
+  display: block;
+}
+
+.button:hover {
+  transform: translateY(2px);
+}
+
+.button:active {
+  transform: translateY(4px);
+}
+
+.button--primary {
+  background: var(--button-primary-background);
+  color: var(--color-text-on-action);
+}
+
+.button--primary:hover {
+  background: var(--button-primary-hover-background);
+  box-shadow: var(--shadow-elevation-2);
+}
+
+.button--primary:focus-visible {
+  background: var(--button-primary-focus-background);
+  border-width: var(--button-focus-border-width);
+  outline: none;
+}
+
+.button--primary:active {
+  background: var(--button-primary-pressed-background);
+  box-shadow: none;
+}
+
+.button--secondary {
+  background: var(--button-secondary-background);
+  color: var(--color-text-heading);
+}
+
+.button--secondary:hover {
+  background: var(--button-secondary-hover-background);
+  box-shadow: var(--shadow-elevation-2);
+}
+
+.button--secondary:focus-visible {
+  background: var(--button-secondary-focus-background);
+  border-width: var(--button-focus-border-width);
+  outline: none;
+}
+
+.button--secondary:active {
+  background: var(--button-secondary-pressed-background);
+  box-shadow: none;
+}
+
+.button--accent {
+  background: var(--button-accent-background);
+  color: var(--color-text-on-action);
+}
+
+.button--accent:hover {
+  background: var(--button-accent-hover-background);
+  box-shadow: var(--shadow-elevation-2);
+}
+
+.button--accent:focus-visible {
+  outline: none;
+  border-width: var(--button-focus-border-width);
+}
+
+.button--accent:active {
+  background: var(--button-accent-pressed-background);
+  box-shadow: none;
+}
+
+/* Disabled states */
+.button:disabled,
+.button.is-disabled,
+.button[aria-disabled="true"] {
+  cursor: not-allowed;
+  opacity: 0.6;
+  box-shadow: none;
+  transform: none;
+  pointer-events: none;
+}
+
+.button--primary:disabled,
+.button--primary[aria-disabled="true"] {
+  background: var(--button-primary-disabled-background);
+  color: var(--color-text-disabled);
+  border-color: var(--color-border-disabled);
+}
+
+.button--secondary:disabled,
+.button--secondary[aria-disabled="true"] {
+  background: var(--color-surface-disabled);
+  color: var(--color-text-disabled);
+  border-color: var(--color-border-disabled);
+}
+
+.button--accent:disabled,
+.button--accent[aria-disabled="true"] {
+  background: var(--color-surface-disabled);
+  color: var(--color-text-disabled);
+  border-color: var(--color-border-disabled);
+}

@@ -1,0 +1,32 @@
+.cs-hero__stripe {
+    background: #000B21;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 24px 5%;
+}
+
+.cs-hero__stripe-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.cs-stripe-item {
+    text-align: center;
+}
+
+.cs-stripe-num {
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 4px 0;
+}
+
+.cs-stripe-label {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.65);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}

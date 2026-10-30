@@ -1,0 +1,64 @@
+/*
+ * Spacing & Sizing Tokens
+ * Brand scale, device dimensions, and alias spacing mappings.
+ */
+
+:root {
+  /* Brand / scale/* */
+  --scale-0: 0px;
+  --scale-25: 1px;
+  --scale-50: 2px;
+  --scale-100: 4px;
+  --scale-200: 8px;
+  --scale-300: 12px;
+  --scale-400: 16px;
+  --scale-500: 20px;
+  --scale-600: 24px;
+  --scale-700: 28px;
+  --scale-800: 32px;
+  --scale-900: 40px;
+  --scale-1000: 48px;
+  --scale-1100: 56px;
+  --scale-1200: 64px;
+  --scale-1300: 72px;
+  --scale-1400: 80px;
+  --scale-1500: 96px;
+
+  /* Figma responsive collection, Desktop/Mobile modes. Device Size is not a breakpoint. */
+  --responsive-device-size-desktop: 1440px;
+  /* Device Size / Desktop */
+  --responsive-device-size-mobile: 440px;
+  /* Device Size / Mobile; not a confirmed breakpoint */
+
+  /* Alias spacing names -> scale values. */
+  --alias-spacing-none: var(--scale-0);
+  /* Spacing/none -> scale/0 */
+  --alias-spacing-xsm: var(--scale-100);
+  /* Spacing/xsm -> scale/100 */
+  --alias-spacing-sm: var(--scale-200);
+  /* Spacing/sm -> scale/200 */
+  --alias-spacing-md: var(--scale-300);
+  /* Spacing/md -> scale/300 */
+  --alias-spacing-lg: var(--scale-400);
+  /* Spacing/lg -> scale/400 */
+  --alias-spacing-xl: var(--scale-500);
+  /* Spacing/xl -> scale/500 */
+  --alias-spacing-2xl: var(--scale-600);
+  /* Spacing/2xl -> scale/600 */
+  --alias-spacing-3xl: var(--scale-800);
+  /* Spacing/3xl -> scale/800 */
+  --alias-spacing-4xl: var(--scale-900);
+  /* Spacing/4xl -> scale/900 */
+  --alias-spacing-5xl: var(--scale-1000);
+  /* Spacing/5xl -> scale/1000 */
+  --alias-spacing-6xl: var(--scale-1100);
+  /* Spacing/6xl -> scale/1100 */
+  --alias-spacing-7xl: var(--scale-1200);
+  /* Spacing/7xl -> scale/1200 */
+  --alias-spacing-8xl: var(--scale-1300);
+  /* Spacing/8xl -> scale/1300 */
+  --alias-spacing-9xl: var(--scale-1400);
+  /* Spacing/9xl -> scale/1400 */
+  --alias-spacing-10xl: var(--scale-1500);
+  /* Spacing/10xl -> scale/1500 */
+}

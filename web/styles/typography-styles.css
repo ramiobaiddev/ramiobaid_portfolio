@@ -1,0 +1,187 @@
+/*
+ * Typography Styles
+ * Complete typography classes bundling font-family, font-size, font-weight,
+ * line-height, and letter-spacing matching Figma Text Styles.
+ * Consumes clean tokens from tokens/typography.css.
+ */
+
+/* ==========================================================================
+   1. Display & Hero Titles (Fluid clamp)
+   ========================================================================== */
+
+/* 144px Desktop -> 56px Mobile — Massive Stats & Hero numbers */
+.text-bold-title,
+.text-bold-number {
+  font-family: var(--font-family-heading);
+  font-size: var(--type-bold-title-size);
+  font-weight: var(--font-weight-extra-bold);
+  line-height: var(--type-bold-title-line-height);
+  letter-spacing: var(--type-bold-title-letter-spacing);
+}
+
+/* 104px Desktop -> 40px Mobile — Role Title (e.g., "Mobile Developer") */
+.text-role-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--type-role-title-size);
+  font-weight: var(--font-weight-extra-bold);
+  line-height: var(--type-role-title-line-height);
+  letter-spacing: var(--type-role-title-letter-spacing);
+}
+
+/* 84px Desktop -> 36px Mobile — X-Large Title */
+.text-x-large-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--type-x-large-title-size);
+  font-weight: var(--font-weight-extra-bold);
+  line-height: var(--type-x-large-title-line-height);
+  letter-spacing: var(--type-x-large-title-letter-spacing);
+}
+
+/* 66px Desktop -> 32px Mobile — Large Title */
+.text-large-title {
+  font-family: var(--font-family-heading);
+  font-size: var(--type-large-title-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--type-large-title-line-height);
+  letter-spacing: var(--type-large-title-letter-spacing);
+}
+
+/* ==========================================================================
+   2. Headings (H1 to H6 — Fluid clamp)
+   ========================================================================== */
+
+.text-h1,
+h1 {
+  font-family: var(--font-family-heading);
+  font-size: var(--type-h1-size);
+  font-weight: var(--font-weight-extra-bold);
+  line-height: var(--type-h1-line-height);
+  letter-spacing: -0.02em;
+}
+
+.text-h2,
+h2 {
+  font-family: var(--font-family-heading);
+  font-size: var(--type-h2-size);
+  font-weight: var(--font-weight-extra-bold);
+  line-height: var(--type-h2-line-height);
+  letter-spacing: -0.01em;
+}
+
+.text-h3,
+h3 {
+  font-family: var(--font-family-heading);
+  font-size: var(--type-h3-size);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--type-h3-line-height);
+}
+
+.text-h4,
+h4 {
+  font-family: var(--font-family-heading);
+  font-size: var(--type-h4-size);
+  font-weight: var(--font-weight-semi-bold);
+  line-height: var(--type-h4-line-height);
+}
+
+.text-h5,
+h5 {
+  font-family: var(--font-family-heading);
+  font-size: var(--type-h5-size);
+  font-weight: var(--font-weight-semi-bold);
+  line-height: var(--type-h5-line-height);
+}
+
+.text-h6,
+h6 {
+  font-family: var(--font-family-heading);
+  font-size: var(--type-h6-size);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--type-h6-line-height);
+}
+
+/* ==========================================================================
+   3. Body & Paragraph Styles
+   ========================================================================== */
+
+/* Large Body (20px) */
+.text-body-lg,
+.text-paragraph-lg {
+  font-family: var(--font-family-body);
+  font-size: var(--type-body-lg-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--type-body-lg-line-height);
+}
+
+.text-body-lg-bold,
+.text-paragraph-lg-bold {
+  font-family: var(--font-family-body);
+  font-size: var(--type-body-lg-size);
+  font-weight: var(--font-weight-semi-bold);
+  line-height: var(--type-body-lg-line-height);
+}
+
+/* Medium Body (16px) — Standard Paragraph */
+.text-body-md,
+.text-paragraph-md {
+  font-family: var(--font-family-body);
+  font-size: var(--type-body-md-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--type-body-md-line-height);
+}
+
+.text-body-md-bold,
+.text-paragraph-md-bold {
+  font-family: var(--font-family-body);
+  font-size: var(--type-body-md-size);
+  font-weight: var(--font-weight-semi-bold);
+  line-height: var(--type-body-md-line-height);
+}
+
+/* Small Body (14px) */
+.text-body-sm,
+.text-paragraph-sm {
+  font-family: var(--font-family-body);
+  font-size: var(--type-body-sm-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--type-body-sm-line-height);
+}
+
+.text-body-sm-bold,
+.text-paragraph-sm-bold {
+  font-family: var(--font-family-body);
+  font-size: var(--type-body-sm-size);
+  font-weight: var(--font-weight-semi-bold);
+  line-height: var(--type-body-sm-line-height);
+}
+
+/* Extra Small (12px) — Badges, Footnotes */
+.text-body-xsm,
+.text-paragraph-xsm {
+  font-family: var(--font-family-body);
+  font-size: var(--type-body-xsm-size);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--type-body-xsm-line-height);
+}
+
+.text-body-xsm-bold,
+.text-paragraph-xsm-bold {
+  font-family: var(--font-family-body);
+  font-size: var(--type-body-xsm-size);
+  font-weight: var(--font-weight-semi-bold);
+  line-height: var(--type-body-xsm-line-height);
+}
+
+/* Eyebrow / Small Lead */
+.text-eyebrow {
+  font-family: var(--font-family-body);
+  font-size: var(--type-body-sm-size);
+  font-weight: var(--font-weight-semi-bold);
+  line-height: var(--type-body-sm-line-height);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.title-accent {
+  color: var(--alias-secondary-400);
+}

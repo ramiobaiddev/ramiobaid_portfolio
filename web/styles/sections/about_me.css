@@ -1,0 +1,139 @@
+/*
+ * About Me Section Styles
+ * Full-bleed gradient background with responsive tablet/mobile layout.
+ */
+
+.about-me {
+    /* Full-bleed breakout: extends edge-to-edge past body's 5% padding */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+
+    /* Natural content sizing with responsive vertical padding */
+    padding: clamp(64px, 8vw, 120px) 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(32px, 5vw, 80px);
+
+    background: linear-gradient(90deg,
+            var(--alias-primary-default) 0%,
+            var(--alias-primary-900) 100%);
+}
+
+.about-me-content {
+    flex: 3;
+}
+
+.about-me-header {
+    width: 100%;
+}
+
+.about-me__image {
+    width: clamp(280px, 28vw, 420px);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    flex: 1;
+}
+
+.about-me-title {
+    color: var(--text-on-action);
+    margin: 20px 0 28px 0;
+}
+
+.about-me-title span {
+    display: block;
+}
+
+.about-me-description {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    color: var(--text-on-action);
+}
+
+.about-me-description p {
+    margin: 0;
+    line-height: 1.65;
+    font-weight: 300;
+}
+
+.about-title-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--alias-secondary-400);
+    font-size: var(--type-body-sm-size);
+    font-weight: var(--font-weight-semi-bold);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin: 0;
+    padding-bottom: var(--alias-spacing-3xl);
+}
+
+/* 1. Small Orange Square */
+.about-title-eyebrow .eyebrow-square {
+    width: 8px;
+    height: 8px;
+    background-color: var(--alias-secondary-400);
+    flex-shrink: 0;
+}
+
+/* 2. Fluid Blue Line (Never drops down) */
+.about-title-eyebrow .eyebrow-line {
+    flex: 1;
+    max-width: 480px;
+    height: 2px;
+    background-color: var(--alias-primary-600);
+}
+
+/* Mobile & Portrait Tablet (max-width: 820px) */
+@media (max-width: 820px) {
+    .about-me {
+        flex-direction: column;
+        min-height: auto;
+        padding: var(--alias-spacing-6xl) 5%;
+        gap: 24px;
+    }
+
+    /* Unwraps children into the main column flexbox */
+    .about-me-content {
+        display: contents;
+    }
+
+    /* 1. Title on top */
+    .about-me-header {
+        order: 1;
+        width: 100%;
+    }
+
+    /* 2. Circular Photo in the middle (centered) */
+    .about-me__image {
+        order: 2;
+        margin: 24px auto;
+        align-self: center;
+        width: clamp(240px, 50vw, 340px);
+    }
+
+    /* 3. Description at the bottom */
+    .about-me-description {
+        order: 3;
+        width: 100%;
+        max-width: 100%;
+        font-weight: 200;
+        font-size: var(--type-body-sm-size);
+    }
+
+    /* Keep a short line next to ABOUT ME on tablet/mobile */
+    .about-title-eyebrow .eyebrow-line {
+        flex: 1;
+        max-width: 120px;
+        height: 2px;
+        background-color: var(--alias-primary-600);
+    }
+}

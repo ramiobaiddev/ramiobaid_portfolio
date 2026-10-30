@@ -1,0 +1,31 @@
+/*
+ * Effects Tokens
+ * Elevation shadows, border radii, and border widths.
+ */
+
+:root {
+  /* Alias border-width names -> scale values. */
+  --alias-border-width-none: var(--scale-0);
+  /* Border width/none -> scale/0 */
+  --alias-border-width-sm: var(--scale-25);
+  /* Border width/sm -> scale/25 */
+  --alias-border-width-md: var(--scale-50);
+  /* Border width/md -> scale/50 */
+  --alias-border-width-lg: var(--scale-100);
+  /* Border width/lg -> scale/100 */
+
+  /* Alias border-radius names -> scale values. */
+  --alias-radius-none: var(--scale-0);
+  /* Border Radius/none -> scale/0 */
+  --alias-radius-sm: var(--scale-200);
+  /* Border Radius/sm -> scale/200 */
+  --alias-radius-md: var(--scale-300);
+  /* Border Radius/md -> scale/300 */
+  --alias-radius-lg: var(--scale-400);
+  /* Border Radius/lg -> scale/400 */
+
+  /* Effect styles: elevation/2, elevation/4, elevation/8; black, zero spread. */
+  --shadow-elevation-2: 0 2px 0 var(--brand-neutral-800);
+  --shadow-elevation-4: 0 4px 0 var(--brand-neutral-800);
+  --shadow-elevation-8: 0 8px 0 var(--brand-neutral-800);
+}

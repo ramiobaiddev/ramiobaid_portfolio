@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rami Obaid</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="site-header">
+        <a class="logo" href="#">
+            <img src="images/logo.svg" alt="Rami Obaid logo">
+        </a>
+
+        <nav class="main-nav">
+            <a href="#">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#about">About me</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <a class="contact-button" href="#contact">
+            Let's Talk <span>✉</span>
+        </a>
+        <details class="mobile-menu">
+            <summary aria-label="Open navigation menu">
+                ☰
+            </summary>
+
+            <nav class="mobile-nav">
+                <a href="#">Home</a>
+                <a href="#projects">Projects</a>
+                <a href="#about">About me</a>
+                <a href="#contact">Contact</a>
+                <a class="contact-button" href="mailto:ramiobaid545421@gmail.com">Let's Talk</a>
+            </nav>
+        </details>
+        <script>
+            document.querySelectorAll('.mobile-nav a').forEach(a =>
+                a.addEventListener('click', () => a.closest('details').removeAttribute('open')));
+        </script>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <p class="eyebrow">FIGMA → FLUTTER → GOOGLE PLAY</p>
+
+                <h1>
+                    <span class="greeting">Hi, I'm</span>
+                    <span class="name">Rami Obaid</span>
+                    <span class="role">Mobile Developer</span>
+                </h1>
+
+                <p class="hero-description">
+                    I design mobile experiences in Figma and build
+                    them in Flutter—from the first concept to a
+                    shipped app.
+                </p>
+
+                <div class="hero-actions">
+                    <a class="primary-button" href="#projects">
+                        View My Apps <span>→</span>
+                    </a>
+
+                    <a class="secondary-button" href="#">
+                        Download CV <span>↓</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <!-- Replace this path with your actual portrait image -->
+                <img src="images/portrait.svg" alt="Rami sitting in a chair">
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <h2>Selected Projects</h2>
+            <!-- Add your project cards here -->
+        </section>
+    </main>
+
+    <footer>
+        <p>Built by Rami</p>
+    </footer>
+</body>
+
+</html>

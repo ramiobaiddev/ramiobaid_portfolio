@@ -1,0 +1,64 @@
+/*
+ * Section Eyebrow Component Styles
+ * Reusable header badge: [LABEL] [SQUARE] [LINE]
+ */
+
+.section-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: var(--type-body-sm-size);
+  font-weight: var(--font-weight-bold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* 1. Label Color Variants */
+.section-eyebrow--blue,
+.section-eyebrow--blue .section-eyebrow__text {
+  color: var(--alias-primary-default);
+}
+
+.section-eyebrow--yellow,
+.section-eyebrow--yellow .section-eyebrow__text {
+  color: var(--alias-secondary-400);
+}
+
+.section-eyebrow--dark,
+.section-eyebrow--dark .section-eyebrow__text {
+  color: var(--color-text-heading);
+}
+
+/* 2. Brand Accent Square */
+.section-eyebrow__square {
+  width: 8px;
+  height: 8px;
+  background-color: var(--alias-secondary-400);
+  flex-shrink: 0;
+}
+
+/* 3. Fluid Line */
+.section-eyebrow__line {
+  flex: 1;
+  max-width: 280px;
+  height: 2px;
+  background-color: var(--alias-primary-default);
+}
+
+/* Dark mode / dark background line override */
+.section-eyebrow--yellow .section-eyebrow__line {
+  background-color: var(--alias-primary-600);
+  max-width: 480px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 820px) {
+  .section-eyebrow__line {
+    max-width: 60px;
+  }
+
+  .section-eyebrow--yellow .section-eyebrow__line {
+    max-width: 120px;
+  }
+}

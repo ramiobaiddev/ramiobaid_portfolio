@@ -1,0 +1,265 @@
+/*
+ * Color Tokens
+ * Brand palettes, semantic color aliases, light/dark mapped roles, and public color interface.
+ */
+
+:root {
+  /* Brand / blue/* */
+  --brand-blue-50: #e6efff;
+  --brand-blue-100: #ccddff;
+  --brand-blue-200: #9abbff;
+  --brand-blue-300: #679aff;
+  --brand-blue-400: #3478ff;
+  --brand-blue-500: #0156ff;
+  --brand-blue-600: #0145cc;
+  --brand-blue-700: #013499;
+  --brand-blue-800: #012266;
+  --brand-blue-900: #001133;
+
+  /* Brand / orange/*; preserve source token orange/default. */
+  --brand-orange-50: #fff7e6;
+  --brand-orange-100: #ffeecc;
+  --brand-orange-200: #ffdd9a;
+  --brand-orange-300: #ffcc67;
+  --brand-orange-400: #ffbb34;
+  --brand-orange-default: #ffaa01;
+  --brand-orange-600: #cc8801;
+  --brand-orange-700: #996601;
+  --brand-orange-800: #664401;
+  --brand-orange-900: #332200;
+
+  /* Brand / red/* */
+  --brand-red-50: #ffeae6;
+  --brand-red-100: #ffd5cc;
+  --brand-red-200: #ffaa99;
+  --brand-red-300: #ff8067;
+  --brand-red-400: #ff5534;
+  --brand-red-500: #ff2b01;
+  --brand-red-600: #cc2201;
+  --brand-red-700: #991a01;
+  --brand-red-800: #661100;
+  --brand-red-900: #330900;
+
+  /* Brand / yellow/* */
+  --brand-yellow-50: #ffffec;
+  --brand-yellow-100: #feffd8;
+  --brand-yellow-200: #fdffb1;
+  --brand-yellow-300: #fcff8b;
+  --brand-yellow-400: #fbff64;
+  --brand-yellow-500: #faff3d;
+  --brand-yellow-600: #eef33a;
+  --brand-yellow-700: #969925;
+  --brand-yellow-800: #646618;
+  --brand-yellow-900: #32330c;
+
+  /* Brand / neutral/* */
+  --brand-neutral-0: #ffffff;
+  --brand-neutral-100: #f9fafc;
+  --brand-neutral-200: #f4f4f8;
+  --brand-neutral-300: #e3e4eb;
+  --brand-neutral-400: #cacbd4;
+  --brand-neutral-500: #a8a9b2;
+  --brand-neutral-600: #717188;
+  --brand-neutral-700: #323241;
+  --brand-neutral-800: #000000;
+
+  /* B. Alias collection, Mode 1. Preserve source `netural` spelling. */
+  --alias-primary-50: var(--brand-blue-50);
+  /* primary/50 -> blue/50 */
+  --alias-primary-100: var(--brand-blue-100);
+  /* primary/100 -> blue/100 */
+  --alias-primary-200: var(--brand-blue-200);
+  /* primary/200 -> blue/200 */
+  --alias-primary-300: var(--brand-blue-300);
+  /* primary/300 -> blue/300 */
+  --alias-primary-400: var(--brand-blue-400);
+  /* primary/400 -> blue/400 */
+  --alias-primary-500: var(--brand-blue-500);
+  /* primary/500 -> blue/500 */
+  --alias-primary-default: var(--brand-blue-500);
+  /* primary/default -> blue/500 */
+  --alias-primary-600: var(--brand-blue-600);
+  /* primary/600 -> blue/600 */
+  --alias-primary-700: var(--brand-blue-700);
+  /* primary/700 -> blue/700 */
+  --alias-primary-800: var(--brand-blue-800);
+  /* primary/800 -> blue/800 */
+  --alias-primary-900: var(--brand-blue-900);
+  /* primary/900 -> blue/900 */
+  --alias-secondary-50: var(--brand-orange-50);
+  /* secondary/50 -> orange/50 */
+  --alias-secondary-100: var(--brand-orange-100);
+  /* secondary/100 -> orange/100 */
+  --alias-secondary-200: var(--brand-orange-200);
+  /* secondary/200 -> orange/200 */
+  --alias-secondary-300: var(--brand-orange-300);
+  /* secondary/300 -> orange/300 */
+  --alias-secondary-400: var(--brand-orange-400);
+  /* secondary/400 -> orange/400 */
+  --alias-secondary-500: var(--brand-orange-default);
+  /* secondary/500 -> orange/default */
+  --alias-secondary-600: var(--brand-orange-600);
+  /* secondary/600 -> orange/600 */
+  --alias-secondary-700: var(--brand-orange-700);
+  /* secondary/700 -> orange/700 */
+  --alias-secondary-800: var(--brand-orange-800);
+  /* secondary/800 -> orange/800 */
+  --alias-secondary-900: var(--brand-orange-900);
+  /* secondary/900 -> orange/900 */
+  --alias-netural-100: var(--brand-neutral-100);
+  /* netural/100 -> neutral/100 */
+  /* Verified anomaly: netural/200 -> neutral/100, despite neutral/200 existing. */
+  --alias-netural-200: var(--brand-neutral-200);
+  /* netural/200 -> neutral/100 */
+  --alias-netural-300: var(--brand-neutral-300);
+  /* netural/300 -> neutral/300 */
+  --alias-netural-400: var(--brand-neutral-400);
+  /* netural/400 -> neutral/400 */
+  --alias-netural-500: var(--brand-neutral-500);
+  /* netural/500 -> neutral/500 */
+  --alias-netural-600: var(--brand-neutral-600);
+  /* netural/600 -> neutral/600 */
+  --alias-netural-700: var(--brand-neutral-700);
+  /* netural/700 -> neutral/700 */
+  --alias-netural-800: var(--brand-neutral-800);
+  /* netural/800 -> neutral/800 */
+  --alias-netural-white: var(--brand-neutral-0);
+  /* netural/white -> neutral/0 */
+  --alias-netural-black: var(--brand-neutral-800);
+  /* netural/black -> neutral/800 */
+
+  /* C. Mapped semantic roles, Light mode. */
+  --text-heading: var(--alias-netural-800);
+  /* Text/heading -> netural/800 */
+  --text-body: var(--alias-netural-700);
+  /* Text/body -> netural/700 */
+  --text-action: var(--alias-primary-default);
+  /* Text/action -> primary/default */
+  --text-action-hover: var(--alias-primary-600);
+  /* Text/action-hover -> primary/600 */
+  --text-disabled: var(--alias-netural-400);
+  /* Text/disabled -> netural/400 */
+  --text-on-action: var(--alias-netural-white);
+  /* Text/on action -> netural/white */
+  --icon-default: var(--alias-netural-700);
+  /* icons/default -> netural/700 */
+  --icon-action: var(--alias-primary-default);
+  /* icons/action -> primary/default */
+  --icon-action-hover: var(--alias-primary-600);
+  /* icons/action-hover -> primary/600 */
+  --icon-disabled: var(--alias-netural-400);
+  /* icons/disabled -> netural/400 */
+  --icon-on-action: var(--alias-netural-white);
+  /* icons/on action -> netural/white */
+  --surface-page: var(--alias-netural-white);
+  /* surface/page -> netural/white */
+  --surface-page-overlayed: var(--alias-netural-200);
+  /* surface/page overlayed -> netural/200 */
+  --surface-default: var(--alias-netural-white);
+  /* surface/default -> netural/white */
+  --surface-action: var(--alias-primary-default);
+  /* surface/action -> primary/default */
+  --surface-action-hover: var(--alias-primary-600);
+  /* surface/action-hover -> primary/600 */
+  --surface-disabled: var(--alias-netural-100);
+  /* surface/disabled -> netural/100 */
+  --border-default: var(--alias-netural-white);
+  /* Border/default -> netural/white */
+  --border-primary: var(--alias-netural-black);
+  /* Border/primary -> netural/black */
+  --border-action: var(--alias-primary-default);
+  /* Border/action -> primary/default */
+  --border-action-hover: var(--alias-primary-600);
+  /* Border/action-hover -> primary/600 */
+  --border-disabled: var(--alias-netural-400);
+  /* Border/disabled -> netural/400 */
+  --border-focus: var(--alias-primary-700);
+  /* Border/focus -> primary/700 */
+
+  /* Mapped semantic Dark mode source values, separately named to retain both modes. */
+  --dark-text-heading: var(--alias-netural-100);
+  /* Text/heading / Dark */
+  --dark-text-body: var(--alias-netural-100);
+  /* Text/body / Dark */
+  --dark-text-action: var(--alias-primary-default);
+  /* Text/action / Dark */
+  --dark-text-action-hover: var(--alias-primary-400);
+  /* Text/action-hover / Dark */
+  --dark-text-disabled: var(--alias-netural-700);
+  /* Text/disabled / Dark */
+  --dark-text-on-action: var(--alias-netural-black);
+  /* Text/on action / Dark */
+  /* icons/default targets netural/50, absent from returned Alias list; name lookup resolved it to neutral/0. */
+  --dark-icon-default: var(--brand-neutral-0);
+  --dark-icon-action: var(--alias-primary-default);
+  --dark-icon-action-hover: var(--alias-primary-400);
+  --dark-icon-disabled: var(--alias-netural-700);
+  --dark-icon-on-action: var(--alias-netural-black);
+  --dark-surface-page: var(--alias-netural-black);
+  --dark-surface-page-overlayed: var(--alias-netural-black);
+  --dark-surface-default: var(--alias-netural-black);
+  --dark-surface-action: var(--alias-primary-default);
+  --dark-surface-action-hover: var(--alias-primary-400);
+  --dark-surface-disabled: var(--alias-netural-700);
+  --dark-border-default: var(--alias-netural-black);
+  --dark-border-primary: var(--alias-netural-white);
+  --dark-border-action: var(--alias-primary-default);
+  --dark-border-action-hover: var(--alias-primary-400);
+  --dark-border-disabled: var(--alias-netural-700);
+  --dark-border-focus: var(--alias-primary-300);
+}
+
+/* Semantic public interface. Light is the default; Dark waits for data-theme="dark". */
+:root {
+  color-scheme: light;
+  --color-text-heading: var(--text-heading);
+  --color-text-body: var(--text-body);
+  --color-text-action: var(--text-action);
+  --color-text-action-hover: var(--text-action-hover);
+  --color-text-disabled: var(--text-disabled);
+  --color-text-on-action: var(--text-on-action);
+  --color-icon-default: var(--icon-default);
+  --color-icon-action: var(--icon-action);
+  --color-icon-action-hover: var(--icon-action-hover);
+  --color-icon-disabled: var(--icon-disabled);
+  --color-icon-on-action: var(--icon-on-action);
+  --color-surface-page: var(--surface-page);
+  --color-surface-page-overlayed: var(--surface-page-overlayed);
+  --color-surface-default: var(--surface-default);
+  --color-surface-action: var(--surface-action);
+  --color-surface-action-hover: var(--surface-action-hover);
+  --color-surface-disabled: var(--surface-disabled);
+  --color-border-default: var(--border-default);
+  --color-border-primary: var(--border-primary);
+  --color-border-action: var(--border-action);
+  --color-border-action-hover: var(--border-action-hover);
+  --color-border-disabled: var(--border-disabled);
+  --color-border-focus: var(--border-focus);
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --color-text-heading: var(--dark-text-heading);
+  --color-text-body: var(--dark-text-body);
+  --color-text-action: var(--dark-text-action);
+  --color-text-action-hover: var(--dark-text-action-hover);
+  --color-text-disabled: var(--dark-text-disabled);
+  --color-text-on-action: var(--dark-text-on-action);
+  --color-icon-default: var(--dark-icon-default);
+  --color-icon-action: var(--dark-icon-action);
+  --color-icon-action-hover: var(--dark-icon-action-hover);
+  --color-icon-disabled: var(--dark-icon-disabled);
+  --color-icon-on-action: var(--dark-icon-on-action);
+  --color-surface-page: var(--dark-surface-page);
+  --color-surface-page-overlayed: var(--dark-surface-page-overlayed);
+  --color-surface-default: var(--dark-surface-default);
+  --color-surface-action: var(--dark-surface-action);
+  --color-surface-action-hover: var(--dark-surface-action-hover);
+  --color-surface-disabled: var(--dark-surface-disabled);
+  --color-border-default: var(--dark-border-default);
+  --color-border-primary: var(--dark-border-primary);
+  --color-border-action: var(--dark-border-action);
+  --color-border-action-hover: var(--dark-border-action-hover);
+  --color-border-disabled: var(--dark-border-disabled);
+  --color-border-focus: var(--dark-border-focus);
+}

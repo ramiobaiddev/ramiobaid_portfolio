@@ -1,0 +1,81 @@
+/*
+ * Component Tokens
+ * Component-specific design tokens (buttons, card gradients, and geometry).
+ */
+
+:root {
+  /* Figma mapped button variables. Source collection misspells `compoents`; source state misspells `foucsed`. */
+  --button-primary-background: var(--alias-primary-default);
+  /* compoents/button/primary / Light */
+  --button-primary-hover-background: var(--alias-primary-700);
+  /* primary-hover / Light */
+  --button-primary-focus-background: var(--alias-primary-700);
+  /* primary-foucsed / Light */
+  --button-primary-pressed-background: var(--alias-primary-600);
+  /* primary-pressed / Light */
+  --button-primary-disabled-background: var(--alias-netural-800);
+  /* disabled / Light */
+  --button-secondary-background: var(--surface-default);
+  /* secondary / Light */
+  --button-secondary-hover-background: var(--alias-netural-300);
+  /* secondary-hover / Light */
+  --button-secondary-focus-background: var(--alias-netural-300);
+  /* secondary-foucsed / Light */
+  --button-secondary-pressed-background: var(--alias-netural-500);
+  /* secondary-pressed / Light */
+  --button-accent-background: var(--brand-orange-default);
+  /* accent / Light */
+  --button-accent-hover-background: var(--brand-orange-700);
+  /* accent-hovered / Light */
+  --button-accent-pressed-background: var(--brand-orange-600);
+  /* accent-pressed / Light */
+
+  /* Button mappings / Dark. */
+  --dark-button-primary-background: var(--alias-primary-800);
+  /* compoents/button/primary */
+  --dark-button-primary-hover-background: var(--alias-primary-300);
+  --dark-button-primary-focus-background: var(--alias-primary-300);
+  /* primary-foucsed */
+  --dark-button-primary-pressed-background: var(--alias-primary-300);
+  --dark-button-primary-disabled-background: var(--alias-netural-800);
+  --dark-button-secondary-background: var(--dark-surface-default);
+  --dark-button-secondary-hover-background: var(--alias-netural-600);
+  --dark-button-secondary-focus-background: var(--alias-netural-600);
+  /* secondary-foucsed */
+  --dark-button-secondary-pressed-background: var(--alias-netural-300);
+  --dark-button-accent-background: var(--brand-orange-800);
+  --dark-button-accent-hover-background: var(--brand-orange-400);
+  --dark-button-accent-pressed-background: var(--brand-orange-300);
+  /* A separate source variable has the literal name `compoents/button/secondary- foucsed`
+     and maps to orange/700 (Light), orange/300 (Dark). Its intended variant is unresolved. */
+  --figma-button-secondary-spaced-foucsed-light: var(--brand-orange-700);
+  --figma-button-secondary-spaced-foucsed-dark: var(--brand-orange-300);
+
+  /* Button geometry inspected in Figma component context (not variable definitions). */
+  --button-padding-block: 12px;
+  --button-padding-inline: 32px;
+  --button-content-gap: 8px;
+  --button-border-width: 2px;
+  --button-focus-border-width: 4px;
+  --button-radius: var(--alias-radius-lg);
+
+  /* Component background recipes, not brand colors. Card one uses literal stops;
+     card three uses variable-bound primary aliases. */
+  --project-card-gradient-one: linear-gradient(270deg, #ccdaff 0%, #4776eb 40%, #294ba3 60%, #00103a 100%);
+  --project-card-gradient-three: linear-gradient(90deg, var(--alias-primary-600) 0%, var(--alias-primary-default) 40%, var(--alias-primary-400) 55%, var(--alias-primary-default) 100%);
+}
+
+[data-theme='dark'] {
+  --button-primary-background: var(--dark-button-primary-background);
+  --button-primary-hover-background: var(--dark-button-primary-hover-background);
+  --button-primary-focus-background: var(--dark-button-primary-focus-background);
+  --button-primary-pressed-background: var(--dark-button-primary-pressed-background);
+  --button-primary-disabled-background: var(--dark-button-primary-disabled-background);
+  --button-secondary-background: var(--dark-button-secondary-background);
+  --button-secondary-hover-background: var(--dark-button-secondary-hover-background);
+  --button-secondary-focus-background: var(--dark-button-secondary-focus-background);
+  --button-secondary-pressed-background: var(--dark-button-secondary-pressed-background);
+  --button-accent-background: var(--dark-button-accent-background);
+  --button-accent-hover-background: var(--dark-button-accent-hover-background);
+  --button-accent-pressed-background: var(--dark-button-accent-pressed-background);
+}

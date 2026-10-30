@@ -1,0 +1,94 @@
+/* ==========================================================================
+   6. VISUAL DESIGN TRANSFORMATION
+   ========================================================================== */
+.cs-visual {
+  width: 100%;
+  background: var(--cs-primary);
+  color: #ffffff;
+  padding: clamp(64px, 8vw, 120px) 5%;
+}
+
+.cs-visual__inner {
+
+  margin: 0 auto;
+}
+
+
+
+.cs-visual__spotlight {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(32px, 6vw, 80px);
+
+}
+
+.cs-visual__spotlight-mockup {
+  flex: 1;
+}
+
+.cs-visual__spotlight-img {
+  width: 100%;
+  max-width: 440px;
+  height: 370;
+  object-fit: cover;
+  filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+}
+
+.cs-visual__spotlight-text {
+  flex: 1.2;
+}
+
+.cs-visual__heading {
+  color: #ffffff;
+  margin-top: var(--alias-spacing-3xl);
+  margin-bottom: var(--alias-spacing-2xl);
+  line-height: 1.1;
+}
+
+.cs-visual__desc {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.65;
+  margin-bottom: var(--alias-spacing-5xl);
+}
+
+.cs-visual__showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+.cs-visual-screen-card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease;
+}
+
+.cs-visual-screen-card:hover {
+  transform: translateY(-6px);
+}
+
+.cs-visual-screen-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+@media (max-width: 820px) {
+  .cs-visual__spotlight {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .cs-visual__showcase-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .cs-visual__showcase-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
