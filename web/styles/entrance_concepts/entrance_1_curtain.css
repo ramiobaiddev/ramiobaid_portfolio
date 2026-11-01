@@ -1,0 +1,67 @@
+/* ==========================================================================
+   Entrance Style 1: Masked Curtain Reveal / Clip-Path Wipe
+   - Clean, razor-sharp architectural entrance
+   - Elements emerge smoothly from an invisible slit with zero blur
+   ========================================================================== */
+
+.hero-content .eyebrow {
+  animation: curtainWipe 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.1s backwards;
+}
+
+.hero-content .greeting {
+  animation: curtainWipe 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
+}
+
+.hero-content .name {
+  animation: curtainWipe 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.3s backwards;
+}
+
+.hero-content .role {
+  animation: curtainWipe 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.4s backwards;
+}
+
+.hero-content .hero-description {
+  animation: curtainWipe 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.5s backwards;
+}
+
+.hero-actions {
+  animation: curtainWipe 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.6s backwards;
+}
+
+.hero-visual img {
+  animation: curtainVisualWipe 1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s backwards;
+  will-change: transform, clip-path;
+}
+
+@keyframes curtainWipe {
+  0% {
+    clip-path: inset(100% 0 0 0);
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 1;
+  }
+  100% {
+    clip-path: inset(0 0 0 0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes curtainVisualWipe {
+  0% {
+    clip-path: inset(25% 0 0 0 round 24px);
+    transform: translateY(45px) scale(0.95);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    clip-path: inset(0 0 0 0 round 0px);
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+

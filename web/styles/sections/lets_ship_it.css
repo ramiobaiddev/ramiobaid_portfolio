@@ -53,8 +53,34 @@
     text-transform: uppercase;
 }
 
+/* 1. Kinetic Opposing Typography */
 .lsi-title__line {
     display: block;
+    opacity: 0;
+    filter: blur(8px);
+    will-change: transform, opacity, filter;
+}
+
+/* Line 1: "LET'S" slides in from the left */
+.lsi-title__line:nth-child(1) {
+    transform: translateX(-40px);
+    transition: opacity 1.1s cubic-bezier(0.19, 1, 0.22, 1) 0.15s,
+        transform 1.1s cubic-bezier(0.19, 1, 0.22, 1) 0.15s,
+        filter 1.1s cubic-bezier(0.19, 1, 0.22, 1) 0.15s;
+}
+
+/* Line 2: "SHIP IT" slides in from the right */
+.lsi-title__line:nth-child(2) {
+    transform: translateX(40px);
+    transition: opacity 1.1s cubic-bezier(0.19, 1, 0.22, 1) 0.35s,
+        transform 1.1s cubic-bezier(0.19, 1, 0.22, 1) 0.35s,
+        filter 1.1s cubic-bezier(0.19, 1, 0.22, 1) 0.35s;
+}
+
+.lets-ship-it.is-revealed .lsi-title__line {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0px);
 }
 
 .lsi-ship {
@@ -66,7 +92,7 @@
     color: var(--alias-secondary-400);
 }
 
-/* 3. Contact Column (Right on Desktop, Bottom on Mobile) */
+/* 2. Contact Column Staggered Reveal */
 .lsi-contact-container {
     display: flex;
     flex-direction: column;
@@ -77,18 +103,94 @@
     z-index: 1;
 }
 
+/* Paper Airplane: Dramatic upward takeoff swoop from bottom to top */
 .lsi-plane {
     width: clamp(200px, 20vw, 290px);
     height: auto;
     object-fit: contain;
-    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.05));
+    filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.08));
+    opacity: 0;
+    /* Starts lower down (-left / bottom) tilted upward along launch angle */
+    transform: translate(-50px, 90px) rotate(-14deg) scale(0.82);
+    filter: blur(10px);
+    transition: opacity 1.35s cubic-bezier(0.16, 1, 0.3, 1) 0.25s,
+        transform 1.35s cubic-bezier(0.16, 1, 0.3, 1) 0.25s,
+        filter 1.35s cubic-bezier(0.16, 1, 0.3, 1) 0.25s;
+    will-change: transform, opacity, filter;
 }
 
+.lets-ship-it.is-revealed .lsi-plane {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    filter: blur(0px);
+    /* After swoop takeoff lands, continuous gentle flight loop */
+    animation: airplaneHoverFlight 6s ease-in-out infinite alternate 1.6s;
+}
 
+@keyframes airplaneHoverFlight {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
 
+    33% {
+        transform: translate(10px, -14px) rotate(1.8deg);
+    }
+
+    66% {
+        transform: translate(-4px, -22px) rotate(-0.8deg);
+    }
+
+    100% {
+        transform: translate(6px, -12px) rotate(1.2deg);
+    }
+}
+
+/* Description Text */
+.lsi-desc {
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(6px);
+    transition: opacity 1.1s cubic-bezier(0.19, 1, 0.22, 1) 0.5s,
+        transform 1.1s cubic-bezier(0.19, 1, 0.22, 1) 0.5s,
+        filter 1.1s cubic-bezier(0.19, 1, 0.22, 1) 0.5s;
+}
+
+.lets-ship-it.is-revealed .lsi-desc {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+}
+
+/* CTA Button with soft ambient pulse */
 .lsi-contact-container .button {
     text-transform: uppercase;
     width: 100%;
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 1.1s cubic-bezier(0.19, 1, 0.22, 1) 0.65s,
+        transform 1.1s cubic-bezier(0.19, 1, 0.22, 1) 0.65s,
+        box-shadow 0.3s ease;
+}
+
+.lets-ship-it.is-revealed .lsi-contact-container .button {
+    opacity: 1;
+    transform: translateY(0);
+
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    .lsi-title__line,
+    .lsi-plane,
+    .lsi-desc,
+    .lsi-contact-container .button {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
+        animation: none !important;
+    }
 }
 
 /* ==========================================================================

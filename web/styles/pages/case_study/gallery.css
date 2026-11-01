@@ -8,7 +8,6 @@
 }
 
 .cs-gallery__inner {
-
   margin: 0 auto;
   padding: 0 5%;
 }
@@ -16,7 +15,6 @@
 .cs-gallery__heading {
   margin-top: var(--alias-spacing-3xl);
   margin-bottom: var(--alias-spacing-5xl);
-
   color: var(--color-text-heading);
 }
 
@@ -34,7 +32,7 @@
   letter-spacing: 0.08em;
   color: rgba(0, 0, 0, 0.5);
   text-transform: uppercase;
-
+  margin-bottom: 20px;
 }
 
 .cs-gallery-grid {
@@ -48,12 +46,12 @@
   overflow: hidden;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
 }
 
 .cs-gallery-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 .cs-gallery-img {

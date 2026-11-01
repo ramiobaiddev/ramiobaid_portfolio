@@ -1,0 +1,88 @@
+/* ==========================================================================
+   Concept 4: Giant Kinetic Typography Marquee
+   - High-fashion agency style with massive continuous scrolling outline text
+   - Sits in the background layer behind hero content & visual
+   - Elegant, laser-thin typographic stroke using brand blue
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-surface-page-overlayed, #f7f8fc);
+}
+
+/* Background Marquee Container */
+.hero-marquee-track {
+  position: absolute;
+  top: 38%;
+  left: 0;
+  width: 100%;
+  transform: translateY(-50%);
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+  white-space: nowrap;
+  /* Fades out softly on the left and right edges */
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.hero-marquee-content {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  animation: heroMarqueeScroll 28s linear infinite;
+  will-change: transform;
+}
+
+.hero-marquee-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: clamp(64px, 9vw, 130px);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  color: transparent;
+  /* Hollow / outline typographic stroke */
+  -webkit-text-stroke: 1.5px rgba(1, 86, 255, 0.14);
+}
+
+.hero-marquee-star {
+  font-size: clamp(32px, 4vw, 60px);
+  color: rgba(255, 170, 1, 0.35);
+}
+
+@keyframes heroMarqueeScroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Ensure foreground content and visual sit crisp on top */
+.hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-visual {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hide or tuck Concept 3 specific elements when Concept 4 is active */
+.hero-stage-card {
+  display: none;
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .hero-marquee-content {
+    animation: none !important;
+  }
+}

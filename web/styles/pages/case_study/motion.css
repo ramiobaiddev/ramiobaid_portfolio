@@ -1,0 +1,109 @@
+/* ==========================================================================
+   Case Study Page Entrance & Reveal Choreography
+   - Hero text cascade & 3D mockup focal zoom
+   - Vision & Pillars stagger
+   - Clean Architecture L1 -> L2 -> L3 cascade
+   - Performance Cards staggered elevation
+   ========================================================================== */
+
+/* 1. Case Study Hero Title & Details */
+.cs-hero__title {
+  animation: csHeroFadeUp 0.85s cubic-bezier(0.34, 1.56, 0.64, 1) 0.1s backwards;
+}
+
+.cs-hero__tagline-heading {
+  animation: csHeroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.22s backwards;
+}
+
+.cs-hero__desc {
+  animation: csHeroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.34s backwards;
+}
+
+.cs-hero__tech-stack {
+  animation: csHeroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.44s backwards;
+}
+
+.cs-hero__actions {
+  animation: csHeroFadeUp 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.54s backwards;
+}
+
+/* 2. Hero Mockup 3D Focal Zoom */
+.cs-hero__mockup-img {
+  animation: csMockupFocalZoom 1.25s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
+  will-change: transform, opacity, filter;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cs-hero__mockup-img:hover {
+  transform: scale(1.02) translateY(-8px);
+}
+
+@keyframes csHeroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes csMockupFocalZoom {
+  0% {
+    opacity: 0;
+    transform: translateY(40px) scale(0.92);
+    filter: blur(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0px);
+  }
+}
+
+/* 3. Metrics Stripe Elevation */
+.cs-hero__stripe {
+  animation: csHeroFadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.4s backwards;
+}
+
+/* 4. Vision Pillars Stagger on Scroll */
+.cs-vision__card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s ease;
+}
+
+.cs-vision__card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+}
+
+/* 5. Performance Challenge Cards Hover */
+.cs-challenge-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.35s ease;
+}
+
+.cs-challenge-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(1, 86, 255, 0.1);
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+  .cs-hero__title,
+  .cs-hero__tagline-heading,
+  .cs-hero__desc,
+  .cs-hero__tech-stack,
+  .cs-hero__actions,
+  .cs-hero__mockup-img,
+  .cs-hero__stripe {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}

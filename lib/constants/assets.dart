@@ -27,7 +27,7 @@ class AppAssets {
   static const String tmdbIcon = 'assets/icons/tmdb-icon.svg';
 
   // Portfolio & Showcase Images
-  static const String portrait = 'assets/general/portrait.png';
+  static const String portrait = 'assets/general/portrait_two.png';
   static const String aboutSectionImage = 'assets/general/about-section-image.png';
   static const String movifyIcon = 'assets/icons/movify-icon.svg';
   static const String movifyDesktopMockups = 'assets/movify/movify-project-mockups.png';
@@ -45,7 +45,7 @@ class AppAssets {
   static const String movifyWfDetails = 'assets/movify/wireframes/details-wireframes.svg';
   static const String movifyWfCollection = 'assets/movify/wireframes/collection-view-wireframes.svg';
   static const String movifyWfGenre = 'assets/movify/wireframes/genre-view-wireframes.svg';
-  static const String movifyWfFavorite = 'assets/movify/wireframes/test.png';
+  static const String movifyWfFavorite = 'assets/movify/wireframes/favorite-view-wireframes.svg';
   static const String movifyWfSeason = 'assets/movify/wireframes/season-view-wireframes.svg';
 
   // Movify Screenshots

@@ -55,16 +55,17 @@
 }
 
 .cs-cta__actions {
-  display: flex;
-  align-items: center;
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(200px, 1fr);
   gap: 16px;
-  flex-wrap: wrap;
 }
 
 .cs-cta__actions .button {
   text-transform: none;
   font-weight: 600;
   padding: 12px 24px;
+  justify-content: center;
 }
 
 .cs-cta__actions .button--accent {
@@ -80,10 +81,13 @@
 
   .cs-cta__actions {
     width: 100%;
+    grid-auto-flow: row;
+    grid-auto-columns: 100%;
   }
 
   .cs-cta__actions .button {
     width: 100%;
+    min-width: 0;
     justify-content: center;
   }
 }

@@ -1,0 +1,29 @@
+/* ==========================================================================
+   Global Reading Progress Bar
+   - Razor-thin hairline at the very top edge of the screen
+   - Expands from 0% to 100% based on exact scroll position
+   - Brand Blue into Warm Amber gradient with specular glow
+   ========================================================================== */
+
+#scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #0156FF 0%, #3478FF 50%, #FFAA01 100%);
+  transform-origin: 0% 50%;
+  transform: scaleX(0);
+  z-index: 10000;
+  pointer-events: none;
+  box-shadow: 0 0 10px rgba(1, 86, 255, 0.4),
+              0 0 5px rgba(255, 170, 1, 0.6);
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #scroll-progress-bar {
+    display: none;
+  }
+}
+

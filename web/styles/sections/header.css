@@ -11,24 +11,97 @@
   gap: 24px;
 }
 
-.logo img {
-  display: block;
-  width: 44px;
-  height: auto;
-}
-
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 32px;
 }
 
+/* ==========================================================================
+   Header Choreographed Staggered Entrance
+   Logo drops -> Nav links cascade left-to-right -> "Let's Talk" button pops
+   ========================================================================== */
+
+/* 1. Logo ("R"): Elastic Drop */
+.site-header .logo {
+  animation: headerItemDrop 0.85s cubic-bezier(0.34, 1.56, 0.64, 1) 0.05s backwards;
+  will-change: transform, opacity;
+}
+
+/* 2. Main Navigation Links: Cascade Wave Left-to-Right */
 .main-nav a {
   color: var(--color-text-heading);
   text-decoration: none;
   font-size: 20px;
   font-weight: 600;
   transition: color 0.15s ease;
+  animation: headerItemSlide 0.75s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  will-change: transform, opacity;
+
+}
+
+.main-nav a:nth-child(1) { animation-delay: 0.12s; } /* Home */
+.main-nav a:nth-child(2) { animation-delay: 0.20s; } /* About me */
+.main-nav a:nth-child(3) { animation-delay: 0.28s; } /* Projects */
+.main-nav a:nth-child(4) { animation-delay: 0.36s; } /* Contact */
+
+/* 3. "Let's Talk" Action Button: Elastic Spring Pop */
+.site-header>.button {
+  animation: headerButtonPop 0.85s cubic-bezier(0.34, 1.56, 0.64, 1) 0.44s backwards;
+  will-change: transform, opacity;
+}
+
+/* Mobile Menu Toggle Button: Smooth Drop on Mobile */
+.mobile-menu summary {
+  animation: headerItemDrop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) 0.15s backwards;
+}
+
+@keyframes headerItemDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-28px) scale(0.85);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes headerItemSlide {
+  0% {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes headerButtonPop {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px) scale(0.88);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .site-header .logo,
+  .main-nav a,
+  .site-header>.button,
+  .mobile-menu summary {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 .main-nav a:hover {

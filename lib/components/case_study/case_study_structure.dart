@@ -13,7 +13,7 @@ class CaseStudyStructure extends StatelessComponent {
   Component build(BuildContext context) {
     return section(classes: 'cs-structure', [
       div(classes: 'cs-structure__inner', [
-        CaseStudyEyebrow(color: EyebrowColor.yellow, text: data.eyebrow),
+        CaseStudyEyebrow(color: EyebrowColor.dark, text: data.eyebrow),
         h2(classes: 'text-bold-title cs-structure__heading', [
           Component.text(data.title),
         ]),

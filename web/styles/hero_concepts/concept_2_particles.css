@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Concept 2: Interactive Particle Constellation Stage
+   - Minimal background base letting the interactive canvas particles shine
+   - Clean layer hierarchy
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-surface-page-overlayed, #f7f8fc);
+}
+
+.hero-content,
+.hero-visual {
+  position: relative;
+  z-index: 1;
+}
+
+/* Hide unused elements from other concepts */
+.hero-marquee-track,
+.hero-stage-card,
+.hero-chip,
+.hero-blob-container {
+  display: none;
+}

@@ -3,6 +3,10 @@
  * Full-bleed gradient background with responsive tablet/mobile layout.
  */
 
+/* ==========================================================================
+   About Me Section Styles & Staggered Reveal Choreography
+   ========================================================================== */
+
 .about-me {
     /* Full-bleed breakout: extends edge-to-edge past body's 5% padding */
     width: 100vw;
@@ -18,6 +22,7 @@
     align-items: center;
     justify-content: space-between;
     gap: clamp(32px, 5vw, 80px);
+    overflow: hidden;
 
     background: linear-gradient(90deg,
             var(--alias-primary-default) 0%,
@@ -32,24 +37,30 @@
     width: 100%;
 }
 
-.about-me__image {
-    width: clamp(280px, 28vw, 420px);
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    object-fit: cover;
-    flex-shrink: 0;
-    flex: 1;
-}
-
+/* 1. Header Title Reveal */
 .about-me-title {
     color: var(--text-on-action);
     margin: 20px 0 28px 0;
+    opacity: 0;
+    transform: translateY(20px);
+    filter: blur(8px);
+    transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.1s,
+        transform 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.1s,
+        filter 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.1s;
+    will-change: opacity, transform, filter;
+}
+
+.about-me.is-revealed .about-me-title {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
 }
 
 .about-me-title span {
     display: block;
 }
 
+/* 2. Staggered Paragraph Stories */
 .about-me-description {
     display: flex;
     flex-direction: column;
@@ -61,6 +72,106 @@
     margin: 0;
     line-height: 1.65;
     font-weight: 300;
+    opacity: 0;
+    transform: translateY(18px);
+    filter: blur(6px);
+    will-change: opacity, transform, filter;
+}
+
+.about-me-description p:nth-child(1) {
+    transition: opacity 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.35s,
+        transform 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.35s,
+        filter 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.35s;
+}
+
+.about-me-description p:nth-child(2) {
+    transition: opacity 1.15s cubic-bezier(0.19, 1, 0.22, 1) 0.65s,
+        transform 1.15s cubic-bezier(0.19, 1, 0.22, 1) 0.65s,
+        filter 1.15s cubic-bezier(0.19, 1, 0.22, 1) 0.65s;
+}
+
+.about-me.is-revealed .about-me-description p {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+}
+
+/* 3. Circular Image & Luminous Pulsing Halo */
+.about-me__image-wrapper {
+    position: relative;
+    flex-shrink: 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0.92) translateY(16px);
+    filter: blur(10px);
+    transition: opacity 0.8s cubic-bezier(0.19, 1, 0.22, 1) 0.2s,
+        transform 0.8s cubic-bezier(0.19, 1, 0.22, 1) 0.2s,
+        filter 0.8s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
+    will-change: opacity, transform, filter;
+}
+
+.about-me.is-revealed .about-me__image-wrapper {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0px);
+}
+
+.about-me__halo {
+    position: absolute;
+    inset: -12px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 170, 1, 0.35) 0%, rgba(1, 86, 255, 0.25) 50%, transparent 75%);
+    filter: blur(20px);
+    z-index: 0;
+    animation: avatarHaloBreathe 6s ease-in-out infinite alternate;
+}
+
+.about-me__image {
+    width: clamp(280px, 28vw, 420px);
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+    border: 3px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+        border-color 0.4s ease;
+}
+
+.about-me__image-wrapper:hover .about-me__image {
+    transform: scale(1.03);
+    border-color: rgba(255, 170, 1, 0.6);
+}
+
+@keyframes avatarHaloBreathe {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.65;
+    }
+
+    100% {
+        transform: scale(1.08);
+        opacity: 1;
+    }
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+
+    .about-me-title,
+    .about-me-description p,
+    .about-me__image-wrapper,
+    .about-me__halo {
+        opacity: 1 !important;
+        transform: none !important;
+        filter: none !important;
+        transition: none !important;
+        animation: none !important;
+    }
 }
 
 .about-title-eyebrow {

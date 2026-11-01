@@ -8,7 +8,7 @@ class AboutMe extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    return section(classes: 'about-me', [
+    return section(classes: 'about-me', id: 'about', [
       div(classes: 'about-me-content', [
         div(classes: 'about-me-header', [
           const SectionEyebrow(
@@ -35,7 +35,10 @@ class AboutMe extends StatelessComponent {
           ]),
         ]),
       ]),
-      img(classes: 'about-me__image', src: AppAssets.aboutSectionImage, alt: "Rami Obaid smiling"),
+      div(classes: 'about-me__image-wrapper', [
+        div(classes: 'about-me__halo', []),
+        img(classes: 'about-me__image', src: AppAssets.aboutSectionImage, alt: "Rami Obaid smiling"),
+      ]),
     ]);
   }
 }

@@ -1,0 +1,70 @@
+/* ==========================================================================
+   Concept 1: Digital Product Studio Background
+   - Clean architectural blueprint grid
+   - Soft breathing ambient gradient mesh
+   ========================================================================== */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-surface-page-overlayed, #f7f8fc);
+  background-image: 
+    linear-gradient(to right, rgba(1, 86, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(1, 86, 255, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  background-position: center top;
+  mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, black 45%, transparent 95%);
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 40%, black 45%, transparent 95%);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  width: clamp(350px, 45vw, 650px);
+  height: clamp(350px, 45vw, 650px);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle at 40% 40%,
+    rgba(1, 86, 255, 0.18) 0%,
+    rgba(255, 170, 1, 0.12) 45%,
+    transparent 70%
+  );
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+  animation: studioGlowPulse 10s ease-in-out infinite alternate;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 10%;
+  left: 5%;
+  width: clamp(250px, 30vw, 450px);
+  height: clamp(250px, 30vw, 450px);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(103, 154, 255, 0.08) 0%, transparent 65%);
+  filter: blur(70px);
+  pointer-events: none;
+  z-index: 0;
+  animation: studioGlowSecondary 12s ease-in-out infinite alternate;
+}
+
+@keyframes studioGlowPulse {
+  0% { transform: scale(0.95) translate(0, 0); opacity: 0.85; }
+  50% { transform: scale(1.08) translate(-20px, 15px); opacity: 1; }
+  100% { transform: scale(1) translate(15px, -20px); opacity: 0.9; }
+}
+
+@keyframes studioGlowSecondary {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.1) translate(20px, -15px); }
+}
+
+.hero-content, .hero-visual {
+  position: relative;
+  z-index: 1;
+}
+

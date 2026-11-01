@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Entrance Style 5: Smooth Glide & Letter-Track Expansion
+   - Modern agency typography reveal
+   - Slides smoothly with wide letter-spacing tracking that resolves into place
+   ========================================================================== */
+
+.hero-content .eyebrow {
+  animation: glideTrack 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.1s backwards;
+}
+
+.hero-content .greeting {
+  animation: glideTrack 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
+}
+
+.hero-content .name {
+  animation: glideTrackName 0.9s cubic-bezier(0.16, 1, 0.3, 1) 0.3s backwards;
+}
+
+.hero-content .role {
+  animation: glideTrack 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s backwards;
+}
+
+.hero-content .hero-description {
+  animation: glideTrack 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.5s backwards;
+}
+
+.hero-actions {
+  animation: glideTrack 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.6s backwards;
+}
+
+.hero-visual img {
+  animation: glideVisual 1s cubic-bezier(0.16, 1, 0.3, 1) 0.25s backwards;
+  will-change: transform, opacity;
+}
+
+@keyframes glideTrack {
+  0% {
+    opacity: 0;
+    letter-spacing: 0.12em;
+    transform: translateY(28px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glideTrackName {
+  0% {
+    opacity: 0;
+    letter-spacing: 0.08em;
+    transform: translateY(32px);
+  }
+  100% {
+    opacity: 1;
+    letter-spacing: normal;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glideVisual {
+  0% {
+    opacity: 0;
+    transform: translateX(40px) scale(0.96);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+

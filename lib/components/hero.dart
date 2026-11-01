@@ -9,6 +9,32 @@ class HeroSection extends StatelessComponent {
   @override
   Component build(BuildContext context) {
     return section(classes: 'hero', [
+      div(classes: 'hero-marquee-track', [
+        div(classes: 'hero-marquee-content', [
+          span(classes: 'hero-marquee-text', [Component.text('FLUTTER')]),
+          span(classes: 'hero-marquee-star', [Component.text('✦')]),
+          span(classes: 'hero-marquee-text', [Component.text('FIGMA TO CODE')]),
+          span(classes: 'hero-marquee-star', [Component.text('✦')]),
+          span(classes: 'hero-marquee-text', [Component.text('MOBILE ARCHITECT')]),
+          span(classes: 'hero-marquee-star', [Component.text('✦')]),
+          span(classes: 'hero-marquee-text', [Component.text('SHIPPED APPS')]),
+          span(classes: 'hero-marquee-star', [Component.text('✦')]),
+          // Duplicate for seamless 100% infinite scroll loop
+          span(classes: 'hero-marquee-text', [Component.text('FLUTTER')]),
+          span(classes: 'hero-marquee-star', [Component.text('✦')]),
+          span(classes: 'hero-marquee-text', [Component.text('FIGMA TO CODE')]),
+          span(classes: 'hero-marquee-star', [Component.text('✦')]),
+          span(classes: 'hero-marquee-text', [Component.text('MOBILE ARCHITECT')]),
+          span(classes: 'hero-marquee-star', [Component.text('✦')]),
+          span(classes: 'hero-marquee-text', [Component.text('SHIPPED APPS')]),
+          span(classes: 'hero-marquee-star', [Component.text('✦')]),
+        ]),
+      ]),
+      div(classes: 'hero-blob-container', [
+        div(classes: 'hero-blob-glow', []),
+        div(classes: 'hero-blob-ring', []),
+        div(classes: 'hero-blob-shape', []),
+      ]),
       div(classes: 'hero-content', [
         p(classes: 'eyebrow', [
           Component.text('FIGMA → FLUTTER → GOOGLE PLAY'),
@@ -39,10 +65,7 @@ class HeroSection extends StatelessComponent {
         ]),
       ]),
       div(classes: 'hero-visual', [
-        img(
-          src: AppAssets.portrait,
-          alt: 'Rami sitting in a chair',
-        ),
+        img(src: AppAssets.portrait, alt: 'Rami sitting in a chair'),
       ]),
     ]);
   }

@@ -8,8 +8,8 @@ class PersonalData {
   static const String location = 'Egypt, Cairo';
 
   // Social Links
-  static const String facebook = 'https://facebook.com';
-  static const String linkedin = 'https://linkedin.com';
-  static const String instagram = 'https://instagram.com';
-  static const String github = 'https://github.com';
+  static const String facebook = 'https://www.facebook.com/rami545421';
+  static const String linkedin = 'https://www.linkedin.com/in/rami-obaid-9bba8a421/';
+  static const String instagram = 'https://www.instagram.com/ramiobaid54/?hl=en';
+  static const String github = 'https://github.com/ramiobaiddev';
 }

@@ -14,8 +14,8 @@ class Header extends StatelessComponent {
       ]),
       nav(classes: 'main-nav', [
         a(href: '/', [Component.text('Home')]),
-        a(href: '/#projects', [Component.text('Projects')]),
         a(href: '/#about', [Component.text('About me')]),
+        a(href: '/#projects', [Component.text('Projects')]),
         a(href: '/#contact', [Component.text('Contact')]),
       ]),
       AppButton(
@@ -39,8 +39,9 @@ class Header extends StatelessComponent {
         ),
         nav(classes: 'mobile-nav', [
           a(href: '/', [Component.text('Home')]),
-          a(href: '/#projects', [Component.text('Projects')]),
+
           a(href: '/#about', [Component.text('About me')]),
+          a(href: '/#projects', [Component.text('Projects')]),
           a(href: '/#contact', [Component.text('Contact')]),
           AppButton(
             label: "Let's Talk ",

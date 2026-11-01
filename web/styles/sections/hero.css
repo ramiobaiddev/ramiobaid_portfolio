@@ -43,6 +43,7 @@
   background: currentColor;
   vertical-align: middle;
   margin-right: 10px;
+  animation: eyebrowLineExpand 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.1s backwards;
 }
 
 .greeting {
@@ -50,15 +51,76 @@
 }
 
 .name {
-  color: var(--alias-primary-default);
   padding-bottom: 4px;
+  /* Animated Liquid Gradient Shimmer */
+  background: linear-gradient(120deg,
+      var(--alias-primary-default) 0%,
+      #38bdf8 30%,
+      var(--alias-primary-default) 60%,
+      #60a5fa 85%,
+      var(--alias-primary-default) 100%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: nameShimmer 8s ease-in-out infinite alternate;
+}
+
+@keyframes nameShimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  100% {
+    background-position: 100% 50%;
+  }
 }
 
 .greeting,
 .name,
 .role {
   margin: 0;
+}
 
+@keyframes eyebrowLineExpand {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+
+  100% {
+    width: 72px;
+    opacity: 1;
+  }
+}
+
+@keyframes eyebrowLineExpandMobile {
+  0% {
+    width: 0;
+    opacity: 0;
+  }
+
+  100% {
+    width: 28px;
+    opacity: 1;
+  }
+}
+
+/* Accessibility: Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-content .eyebrow,
+  .hero-content .greeting,
+  .hero-content .name,
+  .hero-content .role,
+  .hero-content .hero-description,
+  .hero-actions,
+  .hero-visual img,
+  .eyebrow::before {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 .role {
@@ -124,6 +186,7 @@
     width: 28px;
     /* Short, elegant line on mobile instead of 72px */
     margin-right: 8px;
+    animation-name: eyebrowLineExpandMobile;
   }
 
   .hero {
