@@ -42,6 +42,10 @@ class CaseStudyVisual extends StatelessComponent {
                   classes: 'cs-visual-screen-img',
                   src: screen,
                   alt: 'UI Showcase Screen',
+                  attributes: {
+                    'loading': 'lazy',
+                    'decoding': 'async',
+                  },
                 ),
               ]),
           ]),

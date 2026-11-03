@@ -25,6 +25,10 @@ class CaseStudyOffline extends StatelessComponent {
                 classes: 'cs-offline__phone-img',
                 src: data.mockups.first,
                 alt: 'Favorites Screen Mockup',
+                attributes: {
+                  'loading': 'lazy',
+                  'decoding': 'async',
+                },
               ),
             p(classes: 'cs-offline__phone-label', [
               Component.text(data.mockupLabel),
@@ -56,7 +60,7 @@ class CaseStudyOffline extends StatelessComponent {
                     p(classes: 'cs-offline__step-num', [
                       Component.text(step.step),
                     ]),
-                    h4(classes: 'cs-offline__step-label', [
+                    h3(classes: 'cs-offline__step-label', [
                       Component.text(step.title),
                     ]),
                   ]),
@@ -79,7 +83,7 @@ class CaseStudyOffline extends StatelessComponent {
                 img(
                   classes: 'cs-offline__tech-icon',
                   src: badge,
-                  alt: 'Tech Stack Icon',
+                  alt: '',
                 ),
             ]),
           ]),

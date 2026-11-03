@@ -2,7 +2,7 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:ramiobaid_portfolio/components/project_card.dart';
 import 'package:ramiobaid_portfolio/components/section_eyebrow.dart';
-import 'package:ramiobaid_portfolio/models/project.dart';
+import 'package:ramiobaid_portfolio/models/project_model.dart';
 
 /// The Projects showcase section.
 class ProjectsSection extends StatelessComponent {
@@ -25,8 +25,7 @@ class ProjectsSection extends StatelessComponent {
 
       // 3. Project Cards Showcase
       div(classes: 'projects-list', [
-        for (final project in portfolioProjects)
-          ProjectCard(project: project),
+        for (final project in portfolioProjects) ProjectCard(project: project),
       ]),
     ]);
   }

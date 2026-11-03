@@ -37,7 +37,15 @@ class AboutMe extends StatelessComponent {
       ]),
       div(classes: 'about-me__image-wrapper', [
         div(classes: 'about-me__halo', []),
-        img(classes: 'about-me__image', src: AppAssets.aboutSectionImage, alt: "Rami Obaid smiling"),
+        img(
+          classes: 'about-me__image',
+          src: AppAssets.aboutSectionImage,
+          alt: "Rami Obaid smiling",
+          attributes: {
+            'loading': 'lazy',
+            'decoding': 'async',
+          },
+        ),
       ]),
     ]);
   }

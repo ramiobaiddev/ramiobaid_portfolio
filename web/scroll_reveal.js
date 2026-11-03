@@ -1,46 +1,41 @@
 /**
  * Scroll Reveal Engine
- * Uses the browser's native IntersectionObserver for maximum 60fps performance.
- * Automatically discovers all sections and elements to reveal as you scroll down.
+ * Uses the browser's native IntersectionObserver for buttery smooth 60-120fps performance.
+ * Eliminates nested transform collisions and heavy GPU filter re-rasterization.
  */
 (() => {
   const initScrollReveal = () => {
-    // Select all targets to reveal automatically
-    const defaultSelectors = [
-      '.projects-section',
-      '.project-card',
+    // Reveal targets: sections and cards (no nested double-transforms)
+    const targets = [
       '.about-me',
-      '.about-me-content',
-      '.about-me__image',
-      '.lets-ship-it',
-      '.lsi-main-container',
-      '.lsi-actions'
+      '.projects-heading',
+      '.projects-eyebrow',
+      '.project-card',
+      '.lets-ship-it'
     ];
 
-    const elementsToReveal = document.querySelectorAll(defaultSelectors.join(', '));
-
+    const elementsToReveal = document.querySelectorAll(targets.join(', '));
     if (!elementsToReveal.length) return;
 
-    // Apply base reveal class if not present
     elementsToReveal.forEach((el) => {
-      if (el.classList.contains('about-me__image')) {
-        el.classList.add('reveal-scale');
-      } else if (!el.classList.contains('project-card')) {
+      // Add standard reveal class only to headings/eyebrows;
+      // .about-me, .project-card, and .lets-ship-it have dedicated section rules
+      if (el.classList.contains('projects-heading') || el.classList.contains('projects-eyebrow')) {
         el.classList.add('reveal');
       }
     });
 
     const observerOptions = {
       root: null,
-      rootMargin: '0px 0px -10% 0px', // Triggers slightly before element reaches bottom of viewport
-      threshold: 0.12
+      rootMargin: '0px 0px -8% 0px',
+      threshold: 0.1
     };
 
     const observer = new IntersectionObserver((entries, obs) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('is-revealed');
-          // Once revealed, unobserve to free up memory
+          // Once revealed, unobserve to free up observer memory
           obs.unobserve(entry.target);
         }
       });

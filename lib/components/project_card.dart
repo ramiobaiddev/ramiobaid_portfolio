@@ -2,7 +2,7 @@ import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:ramiobaid_portfolio/components/app_button.dart';
 import 'package:ramiobaid_portfolio/constants/assets.dart';
-import 'package:ramiobaid_portfolio/models/project.dart';
+import 'package:ramiobaid_portfolio/models/project_model.dart';
 
 /// Reusable project card component for the portfolio showcase.
 class ProjectCard extends StatelessComponent {
@@ -16,7 +16,10 @@ class ProjectCard extends StatelessComponent {
   @override
   Component build(BuildContext context) {
     return article(
-      classes: 'project-card project-card--${project.id}',
+      classes: 'project-card',
+      styles: Styles(
+        raw: {'--desktop-card-background': project.desktopGradient, '--mobile-card-background': project.mobileGradient},
+      ),
       [
         // 1. Visual Mockups (Right on desktop, Top on mobile)
 
@@ -47,7 +50,7 @@ class ProjectCard extends StatelessComponent {
               img(
                 classes: 'project-tech-icon',
                 src: icon,
-                alt: 'Tech Stack Icon',
+                alt: '',
               ),
           ]),
 
@@ -83,24 +86,35 @@ class ProjectCard extends StatelessComponent {
                 classes: 'project-card__google-play-link',
                 href: project.googlePlayUrl!,
                 target: Target.blank,
+                attributes: {
+                  'rel': 'noopener noreferrer',
+                  'aria-label': 'Get ${project.title} on Google Play',
+                },
                 [Component.text('Get it on Google Play ↗')],
               ),
           ]),
         ]),
-        div(classes: 'project-card__visual--desktop', [
+        div(classes: 'project-card__visual', [
           div(classes: 'project-card__visual-backdrop', []),
-          img(
-            classes: 'project-card__mockup--desktop',
-            src: project.desktopMockup,
-            alt: '${project.title} Mockups',
-          ),
-        ]),
-        div(classes: 'project-card__visual--mobile', [
-          div(classes: 'project-card__visual-backdrop', []),
-          img(
-            classes: 'project-card__mockup--mobile',
-            src: project.mobileMockup,
-            alt: '${project.title} Mockups',
+          Component.element(
+            tag: 'picture',
+            children: [
+              source(
+                attributes: {
+                  'media': '(max-width: 820px)',
+                  'srcset': project.mobileMockup,
+                },
+              ),
+              img(
+                classes: 'project-card__mockup',
+                src: project.desktopMockup,
+                alt: '${project.title} Mockups',
+                attributes: {
+                  'loading': 'lazy',
+                  'decoding': 'async',
+                },
+              ),
+            ],
           ),
         ]),
       ],

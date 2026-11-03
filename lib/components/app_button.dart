@@ -46,6 +46,7 @@ class AppButton extends StatelessComponent {
               src: icon!,
               width: 24,
               height: 24,
+              alt: '',
             ),
           ])
         : null;

@@ -33,6 +33,10 @@ class CaseStudyGallery extends StatelessComponent {
                     classes: 'cs-gallery-img',
                     src: screen,
                     alt: '${category.title} Screen',
+                    attributes: {
+                      'loading': 'lazy',
+                      'decoding': 'async',
+                    },
                   ),
                 ]),
             ]),

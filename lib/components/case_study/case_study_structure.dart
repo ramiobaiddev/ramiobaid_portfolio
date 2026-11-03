@@ -27,9 +27,12 @@ class CaseStudyStructure extends StatelessComponent {
         div(classes: 'cs-structure__diagram-card', [
           img(
             classes: 'cs-structure__diagram-img',
-
             src: data.diagramImage,
             alt: '${data.title} Information Architecture Diagram',
+            attributes: {
+              'loading': 'lazy',
+              'decoding': 'async',
+            },
           ),
         ]),
       ]),

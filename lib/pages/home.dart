@@ -18,12 +18,14 @@ class Home extends StatelessComponent {
   @override
   Component build(BuildContext context) {
     return div([
-      Header(),
-      HeroSection(),
-      AboutMe(),
-      ProjectsSection(),
-      LetsShipIt(),
-      Footer(),
+      const Header(),
+      main_([
+        const HeroSection(),
+        const AboutMe(),
+        const ProjectsSection(),
+        const LetsShipIt(),
+      ]),
+      const Footer(),
     ]);
   }
 }

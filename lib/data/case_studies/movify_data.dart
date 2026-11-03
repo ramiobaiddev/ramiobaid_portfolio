@@ -17,7 +17,7 @@ const CaseStudyData movifyCaseStudy = CaseStudyData(
     title: 'MOVIFY',
     subtitle: 'A place to discover movies & TV.',
     description: 'A movie and TV discovery app designed in Figma and built in Flutter, shipped to Google Play.',
-    mockupImage: AppAssets.movifyCaseStudyMockuptwo,
+    mockupImage: AppAssets.movifyCaseStudyMockup,
     googlePlayUrl: 'https://play.google.com/store/apps/details?id=com.rami.movify',
     githubUrl: 'https://github.com/ramiobaiddev/Movify',
     techStack: [

@@ -9,7 +9,7 @@ class Header extends StatelessComponent {
   @override
   Component build(BuildContext context) {
     return header(classes: 'site-header', [
-      a(classes: 'logo', href: '/', [
+      a(classes: 'logo', href: '/', attributes: {'aria-label': 'Rami Obaid Home'}, [
         img(src: AppAssets.rLogo, alt: 'Rami Obaid logo'),
       ]),
       nav(classes: 'main-nav', [
@@ -28,8 +28,8 @@ class Header extends StatelessComponent {
         summary(
           attributes: {'aria-label': 'Toggle navigation menu'},
           [
-            img(classes: 'menu-icon menu-icon--burger', src: AppAssets.optionsIcon, alt: 'Open menu'),
-            img(classes: 'menu-icon menu-icon--close', src: AppAssets.xCircleIcon, alt: 'Close menu'),
+            img(classes: 'menu-icon menu-icon--burger', src: AppAssets.optionsIcon, alt: ''),
+            img(classes: 'menu-icon menu-icon--close', src: AppAssets.xCircleIcon, alt: ''),
           ],
         ),
         div(

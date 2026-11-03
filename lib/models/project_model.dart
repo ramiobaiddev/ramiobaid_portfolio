@@ -1,6 +1,6 @@
 import 'package:ramiobaid_portfolio/constants/assets.dart';
 
-/// Represents a showcased project in the portfolio.
+// Represents a showcased project in the portfolio.
 class ProjectItem {
   final String id;
   final String title;
@@ -21,7 +21,7 @@ class ProjectItem {
     required this.description,
     required this.mobileMockup,
     required this.desktopMockup,
-    this.desktopGradient = 'linear-gradient(270deg, #CCDAFF 0%, #4776EB 40%, #294BA3 60%, #00103A 100%)',
+    this.desktopGradient = 'linear-gradient(90deg, #CCDAFF 0%, #4776EB 40%, #294BA3 60%, #00103A 100%)',
     this.mobileGradient = 'linear-gradient(180deg, #0B132B 0%, #050B1A 100%)',
     required this.techStack,
     this.caseStudyUrl,
@@ -36,9 +36,9 @@ const List<ProjectItem> portfolioProjects = [
     title: 'MOVIFY',
     appIcon: AppAssets.movifyIcon,
     description: 'A movie & TV discovery app, designed in Figma and built with Flutter.',
-    mobileMockup: AppAssets.movifyMobileMockups,
-    desktopMockup: AppAssets.movifyDesktopMockups,
-    desktopGradient: 'linear-gradient(90deg, #CCDAFF 0%, #4776EB 40%, #294BA3 60%,#00103A 100%)',
+    mobileMockup: AppAssets.movifyProjectCardMobileMockups,
+    desktopMockup: AppAssets.movifyProjectCardDesktopMockups,
+    desktopGradient: 'linear-gradient(270deg, #CCDAFF 0%, #4776EB 40%, #294BA3 60%,#00103A 100%)',
     mobileGradient: 'linear-gradient(180deg, #CCDAFF 0%, #4776EB 40%, #294BA3 60%,#00103A 100%)',
     techStack: [
       AppAssets.figma,

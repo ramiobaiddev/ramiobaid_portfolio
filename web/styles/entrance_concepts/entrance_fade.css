@@ -1,0 +1,88 @@
+/* ==========================================================================
+   Entrance Style: Smooth Staggered Fade Up
+   - Clean, elegant, premium agency fade-in with subtle upward float
+   - Snappy timings & cubic-bezier easing to keep LCP & Performance in the 90s
+   ========================================================================== */
+
+.hero-content .eyebrow {
+  animation: heroFadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.05s backwards;
+}
+
+.hero-content .greeting {
+  animation: heroFadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.1s backwards;
+}
+
+.hero-content .name {
+  animation: heroFadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.15s backwards;
+}
+
+.hero-content .role {
+  animation: heroFadeUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
+}
+
+.hero-content .hero-description {
+  animation: heroFadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.25s backwards;
+}
+
+.hero-actions {
+  animation: heroFadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) 0.3s backwards;
+}
+
+.hero-visual img {
+  animation: heroVisualMotion 0.6s cubic-bezier(0.16, 1, 0.3, 1) backwards;
+  will-change: transform;
+}
+
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroVisualMotion {
+  0% {
+    transform: translateY(24px) scale(0.96);
+  }
+
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Mobile: Render Hero immediately with zero animation delay so FCP and LCP trigger instantly */
+@media (max-width: 820px) {
+
+  .hero-content .eyebrow,
+  .hero-content .greeting,
+  .hero-content .name,
+  .hero-content .role,
+  .hero-content .hero-description,
+  .hero-actions,
+  .hero-visual img {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+
+  .hero-content .eyebrow,
+  .hero-content .greeting,
+  .hero-content .name,
+  .hero-content .role,
+  .hero-content .hero-description,
+  .hero-actions,
+  .hero-visual img {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

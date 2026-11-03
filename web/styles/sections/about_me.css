@@ -43,17 +43,14 @@
     margin: 20px 0 28px 0;
     opacity: 0;
     transform: translateY(20px);
-    filter: blur(8px);
     transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.1s,
-        transform 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.1s,
-        filter 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.1s;
-    will-change: opacity, transform, filter;
+        transform 0.5s cubic-bezier(0.19, 1, 0.22, 1) 0.1s;
+    will-change: opacity, transform;
 }
 
 .about-me.is-revealed .about-me-title {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0px);
 }
 
 .about-me-title span {
@@ -74,26 +71,22 @@
     font-weight: 300;
     opacity: 0;
     transform: translateY(18px);
-    filter: blur(6px);
-    will-change: opacity, transform, filter;
+    will-change: opacity, transform;
 }
 
 .about-me-description p:nth-child(1) {
     transition: opacity 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.35s,
-        transform 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.35s,
-        filter 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.35s;
+        transform 0.3s cubic-bezier(0.19, 1, 0.22, 1) 0.35s;
 }
 
 .about-me-description p:nth-child(2) {
     transition: opacity 1.15s cubic-bezier(0.19, 1, 0.22, 1) 0.65s,
-        transform 1.15s cubic-bezier(0.19, 1, 0.22, 1) 0.65s,
-        filter 1.15s cubic-bezier(0.19, 1, 0.22, 1) 0.65s;
+        transform 1.15s cubic-bezier(0.19, 1, 0.22, 1) 0.65s;
 }
 
 .about-me.is-revealed .about-me-description p {
     opacity: 1;
     transform: translateY(0);
-    filter: blur(0px);
 }
 
 /* 3. Circular Image & Luminous Pulsing Halo */
@@ -106,17 +99,14 @@
     justify-content: center;
     opacity: 0;
     transform: scale(0.92) translateY(16px);
-    filter: blur(10px);
     transition: opacity 0.8s cubic-bezier(0.19, 1, 0.22, 1) 0.2s,
-        transform 0.8s cubic-bezier(0.19, 1, 0.22, 1) 0.2s,
-        filter 0.8s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
-    will-change: opacity, transform, filter;
+        transform 0.8s cubic-bezier(0.19, 1, 0.22, 1) 0.2s;
+    will-change: opacity, transform;
 }
 
 .about-me.is-revealed .about-me__image-wrapper {
     opacity: 1;
     transform: scale(1) translateY(0);
-    filter: blur(0px);
 }
 
 .about-me__halo {

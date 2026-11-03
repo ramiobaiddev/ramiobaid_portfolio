@@ -3,8 +3,9 @@
    Uncomment the ONE entrance concept you want to preview:
    ========================================================================== */
 
+@import url('../entrance_concepts/entrance_fade.css');
 /* @import url('../entrance_concepts/entrance_1_curtain.css'); */
-@import url('../entrance_concepts/entrance_2_perspective.css');
+/* @import url('../entrance_concepts/entrance_2_perspective.css'); */
 /* @import url('../entrance_concepts/entrance_3_lens_blur.css'); */
 /* @import url('../entrance_concepts/entrance_4_elastic_spring.css'); */
 /* @import url('../entrance_concepts/entrance_5_glide_track.css'); */

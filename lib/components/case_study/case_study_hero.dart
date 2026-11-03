@@ -47,7 +47,7 @@ class CaseStudyHero extends StatelessComponent {
                   img(
                     classes: 'cs-hero__tech-icon',
                     src: icon,
-                    alt: 'Tech stack icon',
+                    alt: '',
                   ),
               ]),
 
@@ -76,6 +76,10 @@ class CaseStudyHero extends StatelessComponent {
               classes: 'cs-hero__mockup-img',
               src: data.mockupImage,
               alt: '${data.title} Mockups',
+              attributes: {
+                'fetchpriority': 'high',
+                'loading': 'eager',
+              },
             ),
           ]),
         ]),

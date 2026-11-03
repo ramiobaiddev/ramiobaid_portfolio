@@ -7,11 +7,13 @@ import 'package:ramiobaid_portfolio/models/case_study.dart';
 /// Encapsulates theme CSS variables, outer styling, and common components (e.g. Footer).
 class CaseStudyLayout extends StatelessComponent {
   final String id;
+  final String? appTitle;
   final CaseStudyTheme theme;
   final List<Component> children;
 
   const CaseStudyLayout({
     required this.id,
+    this.appTitle,
     required this.theme,
     required this.children,
     super.key,
@@ -19,20 +21,29 @@ class CaseStudyLayout extends StatelessComponent {
 
   @override
   Component build(BuildContext context) {
-    return div(
-      classes: 'case-study-page case-study--$id',
-      styles: Styles(
-        raw: {
-          '--cs-primary': theme.primaryColor,
-          '--cs-accent': theme.accentColor,
-          '--cs-hero-bg': theme.heroGradient,
-          '--cs-problem-bg': theme.problemBgColor,
-        },
+    final titleString = (appTitle != null && appTitle!.isNotEmpty)
+        ? '$appTitle — Case Study'
+        : 'Case Study | Rami Obaid';
+
+    return Component.fragment([
+      Document.head(
+        title: titleString,
       ),
-      [
-        ...children,
-        const Footer(),
-      ],
-    );
+      div(
+        classes: 'case-study-page case-study--$id',
+        styles: Styles(
+          raw: {
+            '--cs-primary': theme.primaryColor,
+            '--cs-accent': theme.accentColor,
+            '--cs-hero-bg': theme.heroGradient,
+            '--cs-problem-bg': theme.problemBgColor,
+          },
+        ),
+        [
+          main_(children),
+          const Footer(),
+        ],
+      ),
+    ]);
   }
 }

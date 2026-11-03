@@ -48,6 +48,10 @@ class LetsShipIt extends StatelessComponent {
           classes: 'lsi-plane',
           src: AppAssets.paperAirplane,
           alt: 'Paper airplane illustration',
+          attributes: {
+            'loading': 'lazy',
+            'decoding': 'async',
+          },
         ),
 
         // Description text

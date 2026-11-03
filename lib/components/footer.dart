@@ -15,7 +15,7 @@ class Footer extends StatelessComponent {
       div(classes: 'footer-content', [
         // 1. Top Logo Bar
         div(classes: 'footer-brand', [
-          a(href: '#', classes: 'footer-logo', [
+          a(href: '#', classes: 'footer-logo', attributes: {'aria-label': 'Scroll to top'}, [
             img(
               src: AppAssets.rLogo,
               alt: 'Rami Obaid Logo',
@@ -44,7 +44,7 @@ class Footer extends StatelessComponent {
         div(classes: 'footer-columns', [
           // Column 1: Quick Links
           div(classes: 'footer-column footer-column--links', [
-            h4(classes: 'footer-col-title', [Component.text('QUICK LINKS')]),
+            h3(classes: 'footer-col-title', [Component.text('QUICK LINKS')]),
             nav(classes: 'footer-nav', [
               a(href: '#', [Component.text('Home')]),
               a(href: '#projects', [Component.text('Projects')]),
@@ -60,31 +60,35 @@ class Footer extends StatelessComponent {
 
           // Column 2: Connect (Social Links)
           div(classes: 'footer-column footer-column--connect', [
-            h4(classes: 'footer-col-title', [Component.text('CONNECT')]),
+            h3(classes: 'footer-col-title', [Component.text('CONNECT')]),
             div(classes: 'footer-socials', [
               a(
                 href: PersonalData.facebook,
                 target: Target.blank,
                 classes: 'footer-social-link',
-                [img(src: AppAssets.facebook, alt: 'Facebook')],
+                attributes: {'aria-label': 'Facebook Profile', 'rel': 'noopener noreferrer'},
+                [img(src: AppAssets.facebook, alt: '', width: 24, height: 24)],
               ),
               a(
                 href: PersonalData.linkedin,
                 target: Target.blank,
                 classes: 'footer-social-link',
-                [img(src: AppAssets.linkedin, alt: 'LinkedIn')],
+                attributes: {'aria-label': 'LinkedIn Profile', 'rel': 'noopener noreferrer'},
+                [img(src: AppAssets.linkedin, alt: '', width: 24, height: 24)],
               ),
               a(
                 href: PersonalData.instagram,
                 target: Target.blank,
                 classes: 'footer-social-link',
-                [img(src: AppAssets.instagram, alt: 'Instagram')],
+                attributes: {'aria-label': 'Instagram Profile', 'rel': 'noopener noreferrer'},
+                [img(src: AppAssets.instagram, alt: '', width: 24, height: 24)],
               ),
               a(
                 href: PersonalData.github,
                 target: Target.blank,
                 classes: 'footer-social-link',
-                [img(src: AppAssets.github, alt: 'GitHub')],
+                attributes: {'aria-label': 'GitHub Profile', 'rel': 'noopener noreferrer'},
+                [img(src: AppAssets.github, alt: '', width: 24, height: 24)],
               ),
             ]),
           ]),
@@ -94,7 +98,7 @@ class Footer extends StatelessComponent {
 
           // Column 3: Info
           div(classes: 'footer-column footer-column--info', [
-            h4(classes: 'footer-col-title', [Component.text('INFO')]),
+            h3(classes: 'footer-col-title', [Component.text('INFO')]),
             div(classes: 'footer-info-list', [
               a(
                 href: PersonalData.email,

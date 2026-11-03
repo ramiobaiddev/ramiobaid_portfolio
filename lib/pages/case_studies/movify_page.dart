@@ -24,6 +24,7 @@ class MovifyCaseStudyPage extends StatelessComponent {
 
     return CaseStudyLayout(
       id: data.id,
+      appTitle: data.appTitle,
       theme: data.theme,
       children: [
         CaseStudyHero(data: data.hero),

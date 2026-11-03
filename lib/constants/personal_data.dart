@@ -1,6 +1,10 @@
 class PersonalData {
   PersonalData._();
 
+  /// Production site domain. Update this to your live domain when you deploy!
+  /// e.g. 'https://ramiobaid.com' or 'https://ramiobaid.vercel.app'
+  static const String siteUrl = 'https://ramiobaid.dev';
+
   static const String email = 'mailto:ramiobaid545421@gmail.com';
   static const String emailDisplay = 'ramiobaid545421@gmail.com';
   static const String phoneNumber = '(+20) 1026984471';

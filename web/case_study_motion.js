@@ -7,6 +7,11 @@
  */
 (() => {
   const initCaseStudyMotion = () => {
+    // Only run when case study elements are present on the page
+    if (!document.querySelector('.case-study-hero, .cs-stripe-num, .cs-challenge-metric, .cs-wireframe-card')) {
+      return;
+    }
+
     // 1. Animated Number Counter Engine
     const counterElements = document.querySelectorAll(
       '.cs-stripe-num, .cs-challenge-metric'

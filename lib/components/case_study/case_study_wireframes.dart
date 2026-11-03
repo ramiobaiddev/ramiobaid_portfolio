@@ -28,6 +28,10 @@ class CaseStudyWireframes extends StatelessComponent {
                 classes: 'cs-wireframe-img',
                 src: wf,
                 alt: 'Wireframe Screen',
+                attributes: {
+                  'loading': 'lazy',
+                  'decoding': 'async',
+                },
               ),
             ]),
         ]),

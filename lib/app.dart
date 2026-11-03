@@ -22,17 +22,12 @@ class App extends StatelessComponent {
         routes: [
           Route(
             path: '/',
-            title: 'Rami Obaid — Mobile Developer | Flutter & Figma',
+            title: 'Rami Obaid — Mobile Developer',
             builder: (context, state) => const Home(),
           ),
           Route(
-            path: '/case-study/:id',
-            title: 'Case Study | Rami Obaid',
-            builder: (context, state) => CaseStudyPage(id: state.params['id']),
-          ),
-          Route(
-            path: '/case-study',
-            title: 'MOVIFY Case Study | Rami Obaid',
+            path: '/case-study/movify',
+            title: 'Movify Case Study — Rami Obaid',
             builder: (context, state) => const CaseStudyPage(id: 'movify'),
           ),
         ],

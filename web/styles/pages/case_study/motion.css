@@ -53,14 +53,12 @@
 @keyframes csMockupFocalZoom {
   0% {
     opacity: 0;
-    transform: translateY(40px) scale(0.92);
-    filter: blur(10px);
+    transform: translateY(30px) scale(0.95);
   }
 
   100% {
     opacity: 1;
     transform: translateY(0) scale(1);
-    filter: blur(0px);
   }
 }
 

@@ -27,16 +27,16 @@ class AppAssets {
   static const String tmdbIcon = 'assets/icons/tmdb-icon.svg';
 
   // Portfolio & Showcase Images
-  static const String portrait = 'assets/general/portrait_two.png';
-  static const String aboutSectionImage = 'assets/general/about-section-image.png';
-  static const String movifyIcon = 'assets/icons/movify-icon.svg';
-  static const String movifyDesktopMockups = 'assets/movify/movify-project-mockups.png';
-  static const String movifyMobileMockups = 'assets/movify/movify-mobile-mockup.png';
+  static const String portrait = '/assets/general/hero_section_image.avif';
+  static const String aboutSectionImage = 'assets/general/about_image.avif';
+  static const String ogPreview = 'assets/general/og_preview.png';
+  static const String movifyIcon = 'assets/icons/movify_icon.avif';
+  static const String movifyProjectCardDesktopMockups = 'assets/movify/movify-desktop-mockup-card.avif';
+  static const String movifyProjectCardMobileMockups = 'assets/movify/movify_project_card_mockup_mobile.avif';
   static const String paperAirplane = 'assets/icons/paper-plane.svg';
-  static const String movifyTabSeasons = 'assets/movify/screenshots/seasons_tab.png';
+  static const String movifyTabSeasons = 'assets/movify/screenshots/seasons_tab.avif';
 
-  static const String movifyCaseStudyMockup = 'assets/movify/movify_case_study_mockup.png';
-  static const String movifyCaseStudyMockuptwo = 'assets/movify/movify_case_study_mockup_two.png';
+  static const String movifyCaseStudyMockup = 'assets/movify/movify_case_study_mockup.avif';
 
   static const String movifyIA = 'assets/movify/Movify_IA.avif';
 

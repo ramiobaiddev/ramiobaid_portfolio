@@ -10,6 +10,11 @@
  */
 (() => {
   const initParticles = () => {
+    // Only run on desktop/laptop devices with a fine pointer (mouse).
+    // On mobile touch devices, disable continuous canvas drawing to preserve battery and keep mobile TBT < 100ms.
+    const isTouchOrMobile = window.innerWidth < 768 || (window.matchMedia && window.matchMedia('(pointer: coarse)').matches);
+    if (isTouchOrMobile) return;
+
     const hero = document.querySelector('.hero');
     if (!hero) return;
 
@@ -71,7 +76,7 @@
 
         // Depth-of-Field (Z-axis): 0.4 (far away) to 1.0 (close up)
         this.z = Math.random() * 0.6 + 0.4;
-        
+
         this.baseRadius = (Math.random() * 2 + 1.2) * this.z;
         this.pulseSpeed = Math.random() * 0.03 + 0.015;
         this.pulseOffset = Math.random() * Math.PI * 2;
@@ -111,22 +116,25 @@
       }
 
       draw() {
-        ctx.save();
-        ctx.shadowBlur = 10 * this.z;
-        ctx.shadowColor = this.colorData.glow;
-        
+        // High-performance dual-layer halo without CPU shadowBlur
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, Math.max(1.2, this.currentRadius * 1.7), 0, Math.PI * 2);
+        ctx.fillStyle = this.colorData.glow;
+        ctx.fill();
+
         ctx.beginPath();
         ctx.arc(this.x, this.y, Math.max(0.6, this.currentRadius), 0, Math.PI * 2);
         ctx.fillStyle = this.colorData.fill;
         ctx.fill();
-        ctx.restore();
       }
     }
 
     let particles = [];
 
     const syncParticles = (oldW, oldH) => {
-      const targetCount = Math.floor(Math.min(width, 1400) / 19);
+      // Mobile-optimized particle density: keeps frame rates locked at 60-120fps
+      const isMobile = width < 768;
+      const targetCount = isMobile ? 14 : Math.floor(Math.min(width, 1400) / 19);
 
       // If dimensions changed, redistribute particles proportionally across new canvas area
       if (oldW > 0 && oldH > 0 && (oldW !== width || oldH !== height)) {
@@ -145,6 +153,7 @@
       if (particles.length > targetCount) {
         particles.length = targetCount;
       }
+      particles.sort((a, b) => a.z - b.z);
     };
 
     const resize = () => {
@@ -176,8 +185,15 @@
     }
 
     let time = 0;
+    let isVisible = true;
+    let animId = null;
 
     const animate = () => {
+      if (!isVisible) {
+        animId = null;
+        return;
+      }
+
       time += 1;
       ctx.clearRect(0, 0, width, height);
 
@@ -220,36 +236,52 @@
 
           if (dist < mouse.radius) {
             const alpha = (1 - dist / mouse.radius) * 0.4 * p.z;
-            ctx.save();
-            ctx.shadowBlur = 6;
-            ctx.shadowColor = 'rgba(255, 170, 1, 0.6)';
             ctx.beginPath();
             ctx.strokeStyle = `rgba(255, 170, 1, ${alpha})`;
             ctx.lineWidth = 1.3 * p.z;
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(mouse.x, mouse.y);
             ctx.stroke();
-            ctx.restore();
           }
         }
       }
 
-      // 3. Render all particles with depth sorting
-      particles.sort((a, b) => a.z - b.z);
+      // 3. Render all particles
       for (let i = 0; i < particles.length; i++) {
         particles[i].update(time);
         particles[i].draw();
       }
 
-      requestAnimationFrame(animate);
+      animId = requestAnimationFrame(animate);
     };
 
-    animate();
+    // Auto-pause particle animation when Hero section is scrolled out of viewport
+    if ('IntersectionObserver' in window) {
+      const heroObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          isVisible = entry.isIntersecting;
+          if (isVisible && !animId) {
+            animId = requestAnimationFrame(animate);
+          }
+        });
+      }, { threshold: 0.05 });
+      heroObserver.observe(hero);
+    } else {
+      animate();
+    }
   };
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initParticles);
-  } else {
-    initParticles();
-  }
-})();
+    const startEngine = () => {
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => initParticles(), { timeout: 1200 });
+      } else {
+        setTimeout(initParticles, 150);
+      }
+    };
+
+    if (document.readyState === 'complete') {
+      startEngine();
+    } else {
+      window.addEventListener('load', startEngine, { once: true });
+    }
+  }) ();
