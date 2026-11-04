@@ -10,34 +10,34 @@
   --font-weight-extra-bold: 800;
 
   /* 2. Display Titles (Hero numbers, stats, role titles — Fluid clamp) */
-  --type-bold-title-size: clamp(2.25rem, 1rem + 5vw, 8rem);
-  --type-bold-title-line-height: 1.0;
-  --type-bold-title-letter-spacing: -0.05em;
+  --type-bold-title-size: clamp(3.5rem, 1.5rem + 8vw, 9rem);
+  --type-bold-title-line-height: 0.95;
+  --type-bold-title-letter-spacing: -0.07em;
 
-  --type-role-title-size: clamp(2rem, 1.25rem + 4vw, 6rem);
-  --type-role-title-line-height: 1.0;
-  --type-role-title-letter-spacing: -0.04em;
+  --type-role-title-size: clamp(2.5rem, 1.5rem + 5.5vw, 6.5rem);
+  --type-role-title-line-height: 0.96;
+  --type-role-title-letter-spacing: -0.05em;
 
-  --type-x-large-title-size: clamp(1.85rem, 1.15rem + 3.5vw, 4.75rem);
+  --type-x-large-title-size: clamp(2.25rem, 1.25rem + 4.5vw, 5.25rem);
   --type-x-large-title-line-height: 1.05;
-  --type-x-large-title-letter-spacing: -0.03em;
+  --type-x-large-title-letter-spacing: -0.04em;
 
-  --type-large-title-size: clamp(1.75rem, 1.1rem + 2.8vw, 3.75rem);
-  --type-large-title-line-height: 1.05;
-  --type-large-title-letter-spacing: -0.03em;
+  --type-large-title-size: clamp(2rem, 1.25rem + 3.5vw, 4.125rem);
+  --type-large-title-line-height: 0.96;
+  --type-large-title-letter-spacing: -0.04em;
 
   /* 3. Headings (H1 to H6 — Fluid clamp) */
-  --type-h1-size: clamp(1.85rem, 1.35rem + 2vw, 3.5rem);
-  --type-h1-line-height: clamp(2.25rem, 1.75rem + 2vw, 4.25rem);
+  --type-h1-size: clamp(3rem, 2.67rem + 1.2vw, 3.75rem);
+  --type-h1-line-height: clamp(3.5rem, 3.12rem + 1.6vw, 4.5rem);
 
-  --type-h2-size: clamp(1.5rem, 1.2rem + 1.2vw, 2.75rem);
-  --type-h2-line-height: clamp(1.9rem, 1.5rem + 1.5vw, 3.25rem);
+  --type-h2-size: clamp(2.5rem, 2.28rem + 0.8vw, 3rem);
+  --type-h2-line-height: clamp(3rem, 2.78rem + 0.8vw, 3.5rem);
 
-  --type-h3-size: clamp(1.35rem, 1.1rem + 0.8vw, 2.25rem);
-  --type-h3-line-height: clamp(1.75rem, 1.4rem + 1.2vw, 2.75rem);
+  --type-h3-size: clamp(2rem, 1.78rem + 0.8vw, 2.5rem);
+  --type-h3-line-height: clamp(2.5rem, 2.28rem + 0.8vw, 3rem);
 
-  --type-h4-size: clamp(1.2rem, 1.05rem + 0.5vw, 1.75rem);
-  --type-h4-line-height: clamp(1.5rem, 1.3rem + 0.6vw, 2.25rem);
+  --type-h4-size: clamp(1.75rem, 1.64rem + 0.4vw, 2rem);
+  --type-h4-line-height: clamp(2rem, 1.78rem + 0.8vw, 2.5rem);
 
   --type-h5-size: 1.5rem;
   /* 24px */
