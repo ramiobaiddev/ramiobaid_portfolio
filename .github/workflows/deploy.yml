@@ -1,0 +1,42 @@
+name: Deploy to Vercel
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Dart SDK
+        uses: dart-lang/setup-dart@v1
+
+      - name: Setup Node.js (for Sass)
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Compile SCSS
+        run: npx --yes sass web/styles/scss/main.scss:web/styles/bundle.css --style=compressed
+
+      - name: Install Jaspr CLI & Build
+        run: |
+          dart pub get
+          dart pub global activate jaspr_cli
+          export PATH="$PATH:$HOME/.pub-cache/bin"
+          jaspr build
+
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v25
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          vercel-args: '--prod'
+          working-directory: ./build/jaspr
+
