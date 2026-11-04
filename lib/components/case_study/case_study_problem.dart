@@ -1,5 +1,7 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
+import 'package:ramiobaid_portfolio/components/case_study/case_study_eyebrow.dart';
+import 'package:ramiobaid_portfolio/components/section_eyebrow.dart';
 import 'package:ramiobaid_portfolio/models/case_study.dart';
 
 class CaseStudyProblem extends StatelessComponent {
@@ -12,7 +14,7 @@ class CaseStudyProblem extends StatelessComponent {
     return section(classes: 'cs-problem', [
       div(classes: 'cs-problem__inner', [
         div(classes: 'cs-problem__title-col', [
-          p(classes: 'text-paragraph-sm-bold cs-problem__eyebrow', [Component.text(data.eyebrow)]),
+          CaseStudyEyebrow(color: EyebrowColor.blue, text: data.eyebrow),
           h2(classes: 'text-role-title  cs-problem__heading', [
             Component.text(data.title),
           ]),

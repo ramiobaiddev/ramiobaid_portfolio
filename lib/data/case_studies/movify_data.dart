@@ -188,7 +188,7 @@ const CaseStudyData movifyCaseStudy = CaseStudyData(
 
   // 10. The App - Complete Gallery
   gallery: CaseStudyGalleryData(
-    eyebrow: 'THE COMPLETE EXPERIENCE',
+    eyebrow: '06 / MOVIFY FINAL UI',
     title: 'From an idea to a product people can actually use.',
     accentTitle: 'THE APP.',
     categories: [

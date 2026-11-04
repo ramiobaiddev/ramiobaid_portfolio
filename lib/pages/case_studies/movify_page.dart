@@ -14,7 +14,6 @@ import 'package:ramiobaid_portfolio/components/case_study/case_study_visual.dart
 import 'package:ramiobaid_portfolio/components/case_study/case_study_wireframes.dart';
 import 'package:ramiobaid_portfolio/data/case_studies/movify_data.dart';
 
-@client
 class MovifyCaseStudyPage extends StatelessComponent {
   const MovifyCaseStudyPage({super.key});
 

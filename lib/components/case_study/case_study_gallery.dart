@@ -23,7 +23,7 @@ class CaseStudyGallery extends StatelessComponent {
 
         for (final category in data.categories)
           div(classes: 'cs-gallery-category', [
-            h3(classes: 'cs-gallery-cat-title', [
+            h3(classes: 'text-body-md-bold cs-gallery-cat-title', [
               Component.text(category.title),
             ]),
             div(classes: 'cs-gallery-grid', [

@@ -89,6 +89,49 @@
   box-shadow: 0 16px 32px rgba(1, 86, 255, 0.1);
 }
 
+/* 6. Mobile Snappy App-Style Entrance (Fast 0.3s timing to keep LCP in the green) */
+@media (max-width: 820px) {
+  .cs-hero__title {
+    animation: csHeroFadeUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) 0s backwards;
+  }
+
+  .cs-hero__tagline-heading {
+    animation: csHeroFadeUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) 0.05s backwards;
+  }
+
+  .cs-hero__desc {
+    animation: csHeroFadeUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) 0.1s backwards;
+  }
+
+  .cs-hero__tech-stack {
+    animation: csMobileFadeUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) 0.12s backwards;
+  }
+
+  .cs-hero__actions {
+    animation: csMobileFadeUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) 0.16s backwards;
+  }
+
+  .cs-hero__mockup-img {
+    animation: csMobileFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.1s backwards;
+  }
+
+  .cs-hero__stripe {
+    animation: csMobileFadeUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) 0.15s backwards;
+  }
+}
+
+@keyframes csMobileFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* Reduced motion accessibility */
 @media (prefers-reduced-motion: reduce) {
 

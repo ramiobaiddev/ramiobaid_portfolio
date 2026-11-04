@@ -27,10 +27,8 @@
 }
 
 .cs-gallery-cat-title {
-  font-size: 1rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  color: rgba(0, 0, 0, 0.5);
+
+  color: var(--alias-netural-700);
   text-transform: uppercase;
   margin-bottom: 20px;
 }

@@ -11,6 +11,7 @@ enum EyebrowColor {
 
   /// Dark navy / charcoal (e.g., Contact / Let's Ship It section)
   dark,
+  white,
 }
 
 /// A reusable section eyebrow component with an uppercase label,
@@ -33,6 +34,8 @@ class SectionEyebrow extends StatelessComponent {
         return 'section-eyebrow--yellow';
       case EyebrowColor.dark:
         return 'section-eyebrow--dark';
+      case EyebrowColor.white:
+        return 'section-eyebrow--white';
     }
   }
 

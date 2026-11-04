@@ -11,13 +11,13 @@
   font-weight: var(--font-weight-bold);
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  margin: 0;
+  margin-bottom: var(--alias-spacing-4xl);
 }
 
 /* 1. Label Color Variants */
 .section-eyebrow--blue,
 .section-eyebrow--blue .section-eyebrow__text {
-  color: var(--alias-primary-default);
+  color: var(--alias-primary-800);
 }
 
 .section-eyebrow--yellow,
@@ -28,6 +28,11 @@
 .section-eyebrow--dark,
 .section-eyebrow--dark .section-eyebrow__text {
   color: var(--color-text-heading);
+}
+
+.section-eyebrow--white,
+.section-eyebrow--white .section-eyebrow__text {
+  color: var(--alias-netural-white);
 }
 
 /* 2. Brand Accent Square */

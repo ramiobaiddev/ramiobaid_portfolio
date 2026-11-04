@@ -23,7 +23,7 @@ class CaseStudyVisual extends StatelessComponent {
           //   ),
           // ]),
           div(classes: 'cs-visual__spotlight-text', [
-            CaseStudyEyebrow(color: EyebrowColor.yellow, text: data.eyebrow),
+            CaseStudyEyebrow(color: EyebrowColor.white, text: data.eyebrow),
             h2(classes: 'text-h1 cs-visual__heading', [
               Component.text(data.title),
             ]),

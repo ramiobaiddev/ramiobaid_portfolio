@@ -1,6 +1,8 @@
 import 'package:jaspr/dom.dart';
 import 'package:jaspr/jaspr.dart';
 import 'package:ramiobaid_portfolio/components/app_button.dart';
+import 'package:ramiobaid_portfolio/components/case_study/case_study_eyebrow.dart';
+import 'package:ramiobaid_portfolio/components/section_eyebrow.dart';
 import 'package:ramiobaid_portfolio/constants/assets.dart';
 import 'package:ramiobaid_portfolio/models/case_study.dart';
 
@@ -13,11 +15,8 @@ class CaseStudyCta extends StatelessComponent {
   Component build(BuildContext context) {
     return section(classes: 'cs-cta', [
       div(classes: 'cs-cta__inner', [
-        if (data.eyebrow != null)
-          div(classes: 'cs-cta__eyebrow', [
-            Component.text(data.eyebrow!),
-          ]),
-        h2(classes: 'cs-cta__heading', [
+        if (data.eyebrow != null) CaseStudyEyebrow(color: EyebrowColor.white, text: data.eyebrow!),
+        h2(classes: 'text-x-large-title cs-cta__heading', [
           Component.text(data.title),
         ]),
         div(classes: 'cs-cta__bottom', [

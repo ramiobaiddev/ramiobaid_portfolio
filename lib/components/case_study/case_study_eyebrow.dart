@@ -15,6 +15,8 @@ class CaseStudyEyebrow extends StatelessComponent {
         return 'section-eyebrow--yellow';
       case EyebrowColor.dark:
         return 'section-eyebrow--dark';
+      case EyebrowColor.white:
+        return 'section-eyebrow--white';
     }
   }
 

@@ -1,0 +1,49 @@
+/* ==========================================================================
+   RAMI OBAID PORTFOLIO - MAIN SCSS ENTRY POINT
+   Compiles all design tokens, layouts, sections & case study modules
+   into web/styles/bundle.css with high compression & source mapping.
+   ========================================================================== */
+
+// 1. Tokens & Design System
+@use 'tokens/spacing' as *;
+@use 'tokens/typography' as *;
+@use 'tokens/colors' as *;
+@use 'tokens/effects' as *;
+@use 'tokens/component-tokens' as *;
+
+// 2. Base & Global Styles
+@use 'global' as *;
+@use 'typography-styles' as *;
+@use 'layout' as *;
+@use 'buttons' as *;
+@use 'eyebrow' as *;
+
+// 3. Sections & Hero Concepts
+@use 'sections/header' as *;
+@use 'sections/hero' as *;
+@use 'entrance_concepts/entrance_fade' as *;
+@use 'hero_concepts/concept_2_particles' as *;
+@use 'sections/projects' as *;
+@use 'sections/about_me' as *;
+@use 'sections/lets_ship_it' as *;
+@use 'sections/footer' as *;
+
+// 4. Global Interactions & Motion
+@use 'scroll_reveal' as *;
+@use 'progress_bar' as *;
+
+// 5. Case Study Pages
+@use 'pages/case_study/base' as *;
+@use 'pages/case_study/hero' as *;
+@use 'pages/case_study/problem' as *;
+@use 'pages/case_study/vision' as *;
+@use 'pages/case_study/structure' as *;
+@use 'pages/case_study/wireframes' as *;
+@use 'pages/case_study/visual' as *;
+@use 'pages/case_study/engineering' as *;
+@use 'pages/case_study/challenges' as *;
+@use 'pages/case_study/offline' as *;
+@use 'pages/case_study/gallery' as *;
+@use 'pages/case_study/cta' as *;
+@use 'pages/case_study/motion' as *;
+@use 'pages/case_study/metrics' as *;
