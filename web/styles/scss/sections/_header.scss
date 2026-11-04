@@ -126,8 +126,10 @@
   }
 }
 
-.main-nav a:hover {
-  color: var(--alias-primary-default);
+@media (hover: hover) and (pointer: fine) {
+  .main-nav a:hover {
+    color: var(--alias-primary-default);
+  }
 }
 
 /* Hide mobile menu drawer on desktop */
@@ -245,8 +247,10 @@
   transition: color 0.15s ease;
 }
 
-.mobile-nav a:hover {
-  color: var(--alias-primary-default);
+@media (hover: hover) and (pointer: fine) {
+  .mobile-nav a:hover {
+    color: var(--alias-primary-default);
+  }
 }
 
 /* Tablet (max-width: 1050px) */

@@ -158,9 +158,11 @@
   display: inline-block;
 }
 
-.footer-nav a:hover {
-  color: var(--alias-secondary-400);
-  transform: translateX(4px);
+@media (hover: hover) and (pointer: fine) {
+  .footer-nav a:hover {
+    color: var(--alias-secondary-400);
+    transform: translateX(4px);
+  }
 }
 
 /* Column 2: Social Links (White icons) */
@@ -179,9 +181,11 @@
   transition: transform 0.15s ease, opacity 0.15s ease;
 }
 
-.footer-social-link:hover {
-  transform: translateY(-3px);
-  opacity: 0.8;
+@media (hover: hover) and (pointer: fine) {
+  .footer-social-link:hover {
+    transform: translateY(-3px);
+    opacity: 0.8;
+  }
 }
 
 .footer-social-link img {
@@ -213,8 +217,10 @@
   transition: color 0.15s ease;
 }
 
-.footer-info-link:hover {
-  color: var(--alias-secondary-400);
+@media (hover: hover) and (pointer: fine) {
+  .footer-info-link:hover {
+    color: var(--alias-secondary-400);
+  }
 }
 
 /* ==========================================================================

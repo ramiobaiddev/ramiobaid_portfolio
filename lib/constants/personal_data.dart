@@ -3,12 +3,12 @@ class PersonalData {
 
   /// Production site domain. Update this to your live domain when you deploy!
   /// e.g. 'https://ramiobaid.com' or 'https://ramiobaid.vercel.app'
-  static const String siteUrl = 'https://ramiobaid.dev';
+  static const String siteUrl = 'https://ramiobaidportfolio.vercel.app';
 
   static const String email = 'mailto:ramiobaid545421@gmail.com';
   static const String emailDisplay = 'ramiobaid545421@gmail.com';
-  static const String phoneNumber = '(+20) 1026984471';
-  static const String phoneHref = 'tel:+201026984471';
+  static const String phoneNumber = '(+20) 1014462418';
+  static const String phoneHref = 'tel:+201014462418';
   static const String location = 'Egypt, Cairo';
 
   // Social Links

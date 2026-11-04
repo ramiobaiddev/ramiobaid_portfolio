@@ -34,19 +34,19 @@
 }
 
 .cs-wireframe-item {
-
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   height: clamp(380px, 32vw, 460px);
-  /* All wireframes share this exact height */
+  /* All wireframes share this exact height on desktop */
   transition: transform 0.2s ease;
 }
 
-.cs-wireframe-item:hover {
-  transform: translateY(-4px);
+@media (hover: hover) and (pointer: fine) {
+  .cs-wireframe-item:hover {
+    transform: translateY(-4px);
+  }
 }
 
 .cs-wireframe-img {
@@ -56,4 +56,21 @@
   object-fit: contain;
   object-position: top center;
   display: block;
+}
+
+@media (max-width: 680px) {
+  .cs-wireframes__grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .cs-wireframe-item {
+    height: auto;
+    min-height: 0;
+  }
+
+  .cs-wireframe-img {
+    width: 100%;
+    height: auto;
+  }
 }

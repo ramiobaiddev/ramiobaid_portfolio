@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ramiobaid.dev/sitemap.xml
+Sitemap: https://ramiobaidportfolio.vercel.app/sitemap.xml
 
 

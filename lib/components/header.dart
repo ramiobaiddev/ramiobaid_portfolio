@@ -37,19 +37,24 @@ class Header extends StatelessComponent {
           attributes: {'onclick': "this.closest('details').removeAttribute('open')"},
           [],
         ),
-        nav(classes: 'mobile-nav', [
-          a(href: '/', [Component.text('Home')]),
-
-          a(href: '/#about', [Component.text('About me')]),
-          a(href: '/#projects', [Component.text('Projects')]),
-          a(href: '/#contact', [Component.text('Contact')]),
-          AppButton(
-            label: "Let's Talk ",
-            href: "mailto:ramiobaid545421@gmail.com",
-            variant: ButtonVariant.contact,
-            icon: AppAssets.outlineMailIcon,
-          ),
-        ]),
+        nav(
+          classes: 'mobile-nav',
+          attributes: {
+            'onclick': "if (event.target.closest('a')) this.closest('details').removeAttribute('open')"
+          },
+          [
+            a(href: '/', [Component.text('Home')]),
+            a(href: '/#about', [Component.text('About me')]),
+            a(href: '/#projects', [Component.text('Projects')]),
+            a(href: '/#contact', [Component.text('Contact')]),
+            AppButton(
+              label: "Let's Talk ",
+              href: "mailto:ramiobaid545421@gmail.com",
+              variant: ButtonVariant.contact,
+              icon: AppAssets.outlineMailIcon,
+            ),
+          ],
+        ),
       ]),
     ]);
   }

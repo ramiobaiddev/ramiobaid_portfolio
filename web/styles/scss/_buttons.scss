@@ -35,56 +35,58 @@
   will-change: transform;
 }
 
-.button:hover {
-  transform: translateY(4px);
-}
+@media (hover: hover) and (pointer: fine) {
+  .button:hover {
+    transform: translateY(4px);
+  }
 
-/* ==========================================================================
-   Semantic Button Icon Micro-Interactions on Hover
-   Each icon responds dynamically according to its action & direction.
-   ========================================================================== */
+  /* ==========================================================================
+     Semantic Button Icon Micro-Interactions on Hover
+     Each icon responds dynamically according to its action & direction.
+     ========================================================================== */
 
-/* 1. Forward / Default Arrows: Nudge forward (+4px) */
-.button:hover img {
-  transform: translateX(4px);
-}
+  /* 1. Forward / Default Arrows: Nudge forward (+4px) */
+  .button:hover img {
+    transform: translateX(4px);
+  }
 
-/* 2. Back Arrow: Nudge backward (-4px) */
-.button:hover img[src*="arrow_back"],
-.button:hover img[src*="arrow-back"],
-.button:hover img[src*="back"] {
-  transform: translateX(-4px);
-}
+  /* 2. Back Arrow: Nudge backward (-4px) */
+  .button:hover img[src*="arrow_back"],
+  .button:hover img[src*="arrow-back"],
+  .button:hover img[src*="back"] {
+    transform: translateX(-4px);
+  }
 
-/* 3. Download: Nudge downward (+3px) */
-.button:hover img[src*="download"] {
-  transform: translateY(3px);
-}
+  /* 3. Download: Nudge downward (+3px) */
+  .button:hover img[src*="download"] {
+    transform: translateY(3px);
+  }
 
-/* 4. Mail & Contact: Playful tilt & tactile pop */
-.button:hover img[src*="mail"] {
-  transform: scale(1.14) rotate(-8deg);
-}
+  /* 4. Mail & Contact: Playful tilt & tactile pop */
+  .button:hover img[src*="mail"] {
+    transform: scale(1.14) rotate(-8deg);
+  }
 
-/* 5. Paper Airplane: Glide forward & slightly up (launch trajectory) */
-.button:hover img[src*="plane"] {
-  transform: translate(3px, -3px) scale(1.08);
-}
+  /* 5. Paper Airplane: Glide forward & slightly up (launch trajectory) */
+  .button:hover img[src*="plane"] {
+    transform: translate(3px, -3px) scale(1.08);
+  }
 
-/* 6. GitHub: Wiggle tilt */
-.button:hover img[src*="github"] {
-  transform: scale(1.14) rotate(12deg);
-}
+  /* 6. GitHub: Wiggle tilt */
+  .button:hover img[src*="github"] {
+    transform: scale(1.14) rotate(12deg);
+  }
 
-/* 7. Google Play: Store launch pop */
-.button:hover img[src*="google-play"],
-.button:hover img[src*="play"] {
-  transform: scale(1.16);
-}
+  /* 7. Google Play: Store launch pop */
+  .button:hover img[src*="google-play"],
+  .button:hover img[src*="play"] {
+    transform: scale(1.16);
+  }
 
-/* 8. LinkedIn: Tactile pop */
-.button:hover img[src*="linkedin"] {
-  transform: scale(1.14);
+  /* 8. LinkedIn: Tactile pop */
+  .button:hover img[src*="linkedin"] {
+    transform: scale(1.14);
+  }
 }
 
 .button:active {
@@ -127,9 +129,11 @@
   }
 }
 
-.button--primary:hover {
-  background: var(--button-primary-hover-background);
-  box-shadow: var(--shadow-elevation-2);
+@media (hover: hover) and (pointer: fine) {
+  .button--primary:hover {
+    background: var(--button-primary-hover-background);
+    box-shadow: var(--shadow-elevation-2);
+  }
 }
 
 .button--primary:focus-visible {
@@ -148,9 +152,11 @@
   color: var(--color-text-heading);
 }
 
-.button--secondary:hover {
-  background: var(--button-secondary-hover-background);
-  box-shadow: var(--shadow-elevation-2);
+@media (hover: hover) and (pointer: fine) {
+  .button--secondary:hover {
+    background: var(--button-secondary-hover-background);
+    box-shadow: var(--shadow-elevation-2);
+  }
 }
 
 .button--secondary:focus-visible {
@@ -173,9 +179,11 @@
   filter: brightness(0);
 }
 
-.button--accent:hover {
-  background: var(--button-accent-hover-background);
-  box-shadow: var(--shadow-elevation-2);
+@media (hover: hover) and (pointer: fine) {
+  .button--accent:hover {
+    background: var(--button-accent-hover-background);
+    box-shadow: var(--shadow-elevation-2);
+  }
 }
 
 .button--accent:focus-visible {

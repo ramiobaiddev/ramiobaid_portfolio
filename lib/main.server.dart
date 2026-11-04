@@ -16,7 +16,7 @@ void main() {
 
   runApp(
     Document(
-      title: 'Rami Obaid — Mobile Developer | Flutter & Figma',
+      title: 'Rami Obaid — Mobile Developer',
       base: '/',
       lang: 'en',
       meta: {
@@ -63,7 +63,15 @@ void main() {
             'content': '${PersonalData.siteUrl}/assets/general/og_preview.png',
           },
         ),
+        meta(
+          attributes: {
+            'property': 'og:image:secure_url',
+            'content': '${PersonalData.siteUrl}/assets/general/og_preview.png',
+          },
+        ),
         meta(attributes: {'property': 'og:image:type', 'content': 'image/png'}),
+        meta(attributes: {'property': 'og:image:width', 'content': '1200'}),
+        meta(attributes: {'property': 'og:image:height', 'content': '630'}),
         meta(attributes: {'property': 'og:image:alt', 'content': 'Rami Obaid - Mobile Developer'}),
         // Twitter Cards
         meta(name: 'twitter:card', content: 'summary_large_image'),
@@ -83,7 +91,7 @@ void main() {
           content:
               '{"@context":"https://schema.org","@type":"Person","name":"Rami Obaid","jobTitle":"Mobile Developer","url":"${PersonalData.siteUrl}","image":"${PersonalData.siteUrl}/assets/general/og_preview.png","sameAs":["${PersonalData.github}","${PersonalData.linkedin}","${PersonalData.instagram}","${PersonalData.facebook}"]}',
         ),
-        // Fonts & Stylesheets (Non-blocking async font loading + consolidated production bundle)
+        // Fonts & Stylesheets (Consolidated production font loading + bundle)
         link(rel: 'preconnect', href: 'https://fonts.googleapis.com'),
         link(
           rel: 'preconnect',
@@ -93,10 +101,6 @@ void main() {
         link(
           rel: 'stylesheet',
           href: 'https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap',
-          attributes: {
-            'media': 'print',
-            'onload': "this.media='all'",
-          },
         ),
         link(rel: 'stylesheet', href: '/styles/bundle.css'),
         // Motion & Interaction Scripts
