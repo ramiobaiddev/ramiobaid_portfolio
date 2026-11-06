@@ -10,7 +10,7 @@ class AppAssets {
   static const String xCircleIcon = 'assets/icons/x-circle-icon.svg';
   static const String outlineMailIcon = 'assets/icons/mail-outline-icon.svg';
   static const String rLogo = 'assets/general/r_logo.svg';
-  static const String cv = 'assets/cv/Rami_Obiad_Cv.pdf';
+  static const String cv = 'assets/cv/rami_obaid_cv.pdf';
 
   // Social Links
   static const String github = 'assets/icons/github-icon.svg';
