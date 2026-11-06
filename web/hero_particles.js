@@ -10,10 +10,12 @@
  */
 (() => {
   const initParticles = () => {
-    // Only run on desktop/laptop devices with a fine pointer (mouse).
-    // On mobile touch devices, disable continuous canvas drawing to preserve battery and keep mobile TBT < 100ms.
-    const isTouchOrMobile = window.innerWidth < 768 || (window.matchMedia && window.matchMedia('(pointer: coarse)').matches);
-    if (isTouchOrMobile) return;
+    // Respect accessibility motion preferences
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
+    const isMobile = window.innerWidth < 768 || (window.matchMedia && window.matchMedia('(pointer: coarse)').matches);
 
     const hero = document.querySelector('.hero');
     if (!hero) return;
@@ -33,7 +35,7 @@
     }
 
     const ctx = canvas.getContext('2d');
-    let dpr = Math.min(window.devicePixelRatio || 1, 2);
+    let dpr = isMobile ? Math.min(window.devicePixelRatio || 1, 1.5) : Math.min(window.devicePixelRatio || 1, 2);
 
     let width = hero.offsetWidth;
     let height = hero.offsetHeight;
@@ -46,16 +48,18 @@
       radius: 170
     };
 
-    hero.addEventListener('mousemove', (e) => {
-      const rect = hero.getBoundingClientRect();
-      mouse.targetX = e.clientX - rect.left;
-      mouse.targetY = e.clientY - rect.top;
-    });
+    if (!isMobile) {
+      hero.addEventListener('mousemove', (e) => {
+        const rect = hero.getBoundingClientRect();
+        mouse.targetX = e.clientX - rect.left;
+        mouse.targetY = e.clientY - rect.top;
+      }, { passive: true });
 
-    hero.addEventListener('mouseleave', () => {
-      mouse.targetX = -1000;
-      mouse.targetY = -1000;
-    });
+      hero.addEventListener('mouseleave', () => {
+        mouse.targetX = -1000;
+        mouse.targetY = -1000;
+      });
+    }
 
     // Brand Palette: Royal Blue and Warm Amber
     const palette = [
@@ -99,16 +103,18 @@
         if (this.y < -20) this.y = height + 20;
         if (this.y > height + 20) this.y = -20;
 
-        // Elastic Mouse Ripple Wave Force
-        const dx = mouse.x - this.x;
-        const dy = mouse.y - this.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
+        // Elastic Mouse Ripple Wave Force (only on mouse devices)
+        if (!isMobile && mouse.x > 0 && mouse.y > 0) {
+          const dx = mouse.x - this.x;
+          const dy = mouse.y - this.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
 
-        if (dist < mouse.radius) {
-          const force = (mouse.radius - dist) / mouse.radius;
-          const pushAngle = Math.atan2(dy, dx);
-          this.x -= Math.cos(pushAngle) * force * 3.5 * this.z;
-          this.y -= Math.sin(pushAngle) * force * 3.5 * this.z;
+          if (dist < mouse.radius) {
+            const force = (mouse.radius - dist) / mouse.radius;
+            const pushAngle = Math.atan2(dy, dx);
+            this.x -= Math.cos(pushAngle) * force * 3.5 * this.z;
+            this.y -= Math.sin(pushAngle) * force * 3.5 * this.z;
+          }
         }
 
         // Organic Breathing size
@@ -226,8 +232,8 @@
         }
       }
 
-      // 2. Glowing Laser Connections to Cursor
-      if (mouse.x > 0 && mouse.y > 0) {
+      // 2. Glowing Laser Connections to Cursor (desktop only)
+      if (!isMobile && mouse.x > 0 && mouse.y > 0) {
         for (let i = 0; i < particles.length; i++) {
           const p = particles[i];
           const dx = mouse.x - p.x;

@@ -10,6 +10,7 @@ class AppAssets {
   static const String xCircleIcon = 'assets/icons/x-circle-icon.svg';
   static const String outlineMailIcon = 'assets/icons/mail-outline-icon.svg';
   static const String rLogo = 'assets/general/r_logo.svg';
+  static const String cv = 'assets/cv/Rami_Obiad_Cv.pdf';
 
   // Social Links
   static const String github = 'assets/icons/github-icon.svg';
@@ -41,12 +42,12 @@ class AppAssets {
   static const String movifyIA = 'assets/movify/Movify_IA.avif';
 
   // Movify Wireframes
-  static const String movifyWfHome = 'assets/movify/wireframes/home-wireframes.svg';
-  static const String movifyWfDetails = 'assets/movify/wireframes/details-wireframes.svg';
-  static const String movifyWfCollection = 'assets/movify/wireframes/collection-view-wireframes.svg';
-  static const String movifyWfGenre = 'assets/movify/wireframes/genre-view-wireframes.svg';
-  static const String movifyWfFavorite = 'assets/movify/wireframes/favorite-view-wireframes.svg';
-  static const String movifyWfSeason = 'assets/movify/wireframes/season-view-wireframes.svg';
+  static const String movifyWfHome = 'assets/movify/wireframes/home-wireframes.avif';
+  static const String movifyWfDetails = 'assets/movify/wireframes/details-wireframes.avif';
+  static const String movifyWfCollection = 'assets/movify/wireframes/collection-view-wireframes.avif';
+  static const String movifyWfGenre = 'assets/movify/wireframes/genre-view-wireframes.avif';
+  static const String movifyWfFavorite = 'assets/movify/wireframes/favorite-view-wireframes.avif';
+  static const String movifyWfSeason = 'assets/movify/wireframes/season-view-wireframes.avif';
 
   // Movify Screenshots
   static const String movifyScreenHome = 'assets/movify/screenshots/home_view.avif';

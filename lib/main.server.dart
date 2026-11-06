@@ -75,7 +75,7 @@ void main() {
         meta(attributes: {'property': 'og:image:alt', 'content': 'Rami Obaid - Mobile Developer'}),
         // Twitter Cards
         meta(name: 'twitter:card', content: 'summary_large_image'),
-        meta(name: 'twitter:title', content: 'Rami Obaid — Mobile Developer | Flutter & Figma'),
+        meta(name: 'twitter:title', content: 'Rami Obaid — Mobile Developer'),
         meta(
           name: 'twitter:description',
           content:

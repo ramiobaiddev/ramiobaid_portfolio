@@ -14,6 +14,8 @@ class AppButton extends StatelessComponent {
   final ButtonVariant variant;
   final String? icon; // Optional icon like "→", "↓", "✉"
   final bool iconLeading;
+  final String? target;
+  final String? download;
   final VoidCallback? onClick;
 
   const AppButton({
@@ -22,6 +24,8 @@ class AppButton extends StatelessComponent {
     this.variant = ButtonVariant.primary,
     this.icon,
     this.iconLeading = false,
+    this.target,
+    this.download,
     this.onClick,
     super.key,
   });
@@ -55,6 +59,10 @@ class AppButton extends StatelessComponent {
       classes: _variantClass,
       href: href,
       onClick: onClick,
+      attributes: {
+        if (target != null) 'target': target!,
+        if (download != null) 'download': download!,
+      },
       [
         if (iconLeading && iconWidget != null) iconWidget,
         Component.text(label),

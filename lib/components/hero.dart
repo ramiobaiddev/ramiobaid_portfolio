@@ -32,7 +32,9 @@ class HeroSection extends StatelessComponent {
           ),
           AppButton(
             label: 'Download CV',
-            href: '#',
+            href: AppAssets.cv,
+            target: '_blank',
+            download: 'Rami_Obaid_CV.pdf',
             variant: ButtonVariant.secondary,
             icon: AppAssets.downloadIcon,
           ),
