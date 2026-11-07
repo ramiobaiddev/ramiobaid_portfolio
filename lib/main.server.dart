@@ -47,7 +47,7 @@ void main() {
         meta(
           attributes: {
             'property': 'og:title',
-            'content': 'Rami Obaid — Mobile Developer | Flutter & Figma',
+            'content': 'Rami Obaid — Mobile Developer',
           },
         ),
         meta(
